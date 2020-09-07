@@ -32,3 +32,4 @@ find_package (Eigen3 3.3 REQUIRED NO_MODULE)
 
 add_executable(geotest src/main.cpp)
 target_include_directories(geotest PUBLIC src/)
+target_link_libraries(geotest ${VTK_LIBRARIES})
