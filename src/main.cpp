@@ -14,7 +14,11 @@
 #include <vtkProperty.h>
 #include <vtkDoubleArray.h>
 
-int main() {
+int not_main() {
+  // return vtk_stuff();
+}
+
+int vtk_stuff() {
   const auto mesh_filepath = "/scratch/karthik/projects/ShapeWorks/Examples/Python/TestFemurMesh/femur/meshes/m03_L_femur.ply";
   auto reader = vtkSmartPointer<vtkPLYReader>::New();
   reader->SetFileName(mesh_filepath);

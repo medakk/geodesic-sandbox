@@ -3,6 +3,12 @@ set(CMAKE_CXX_STANDARD 14)             # available options are [98, 11, 14, 17. 
 
 project(geodesic-sandbox)
 
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+# libigl
+option(LIBIGL_WITH_OPENGL            "Use OpenGL"         OFF)
+option(LIBIGL_WITH_OPENGL_GLFW       "Use GLFW"           OFF)
+find_package(LIBIGL REQUIRED)
+
 ### vtk
 find_package(VTK REQUIRED)
 if (NOT VTK_FOUND)
@@ -30,6 +36,6 @@ ENDIF()
 ### Eigen
 find_package (Eigen3 3.3 REQUIRED NO_MODULE)
 
-add_executable(geotest src/main.cpp)
+add_executable(geotest src/main.cpp src/igltest.cpp)
 target_include_directories(geotest PUBLIC src/)
-target_link_libraries(geotest ${VTK_LIBRARIES})
+target_link_libraries(geotest ${VTK_LIBRARIES} igl::core)
