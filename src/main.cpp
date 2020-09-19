@@ -11,63 +11,213 @@
 #include <vtkDijkstraGraphGeodesicPath.h>
 #include <vtkSphereSource.h>
 #include <vtkActor.h>
+#include <vtkCellLocator.h>
 #include <vtkProperty.h>
 #include <vtkDoubleArray.h>
+#include <random>
 
-int not_main() {
-  // return vtk_stuff();
+struct Vec3d {
+  double x, y, z;
+};
+
+double analytic_geo_dist(double lon0, double lat0, double lon1, double lat1) {
+  // https://en.wikipedia.org/wiki/Great-circle_distance
+  const double del_lon = std::abs(lon0 - lon1);
+  const double del_lat = std::abs(lat0 - lat1);
+
+  // for debugging
+  const double x0 = std::sin(lat0)*std::sin(lat1) + std::cos(lat0)*std::cos(lat1)*std::cos(del_lon);
+  const double central_angle = std::acos(x0);
+  const double r = 1.0; // radius
+
+  return r * central_angle;
 }
 
-int vtk_stuff() {
+double dijkstra_geo_dist(int i, int j, vtkPolyData* mesh) {
+  auto dijkstra = vtkSmartPointer<vtkDijkstraGraphGeodesicPath>::New();
+  dijkstra->SetInputData(mesh);
+  dijkstra->SetStartVertex(i);
+  dijkstra->SetEndVertex(j);
+  dijkstra->Update();
+
+  auto weights = vtkSmartPointer<vtkDoubleArray>::New();
+  dijkstra->GetCumulativeWeights(weights);
+  return weights->GetValue(j);
+}
+
+// assumes r=1.0
+Vec3d geo_to_cart(double lon, double lat) {
+  return {
+    1.0 * std::cos(lat) * cos(lon),
+    1.0 * std::cos(lat) * sin(lon),
+    1.0 * std::sin(lat)
+  };
+}
+
+// assumes r=1.0
+Vec3d cart_to_geo(const Vec3d& p) {
+  return {
+    std::atan2(p.y, p.x),
+    std::asin(p.z / 1.0),
+    1.0
+  };
+}
+
+// Find closest point
+
+vtkIdType closest_point(const Vec3d &p, vtkSmartPointer<vtkCellLocator> cellLocator, vtkPolyData* mesh) {
+  double closestPoint[3];//the coordinates of the closest point will be returned here
+  double closestPointDist2; //the squared distance to the closest point will be returned here
+  vtkIdType cellIdx, p1_cell_idx; //the cell id of the cell containing the closest point will be returned here
+  int subId; //this is rarely used (in triangle strips only, I believe)
+  cellLocator->FindClosestPoint((double *)&p, closestPoint, cellIdx, subId, closestPointDist2);
+  return mesh->GetCell(cellIdx)->GetPointId(0);
+}
+
+vtkSmartPointer<vtkActor> viz_point(const Vec3d &p, const Vec3d &color) {
+  auto points = vtkSmartPointer<vtkPoints>::New();
+  auto vertices = vtkSmartPointer<vtkCellArray>::New();
+  const auto p_id = points->InsertNextPoint((double *) & p);
+  vertices->InsertNextCell(1);
+  vertices->InsertCellPoint(p_id);
+
+  auto poly = vtkSmartPointer<vtkPolyData>::New();
+  poly->SetPoints(points);
+  poly->SetVerts(vertices);
+
+  auto mapper2 = vtkSmartPointer<vtkPolyDataMapper>::New();
+  mapper2->SetInputData(poly);
+  auto actor2 = vtkSmartPointer<vtkActor>::New();
+  actor2->SetMapper(mapper2);
+  actor2->GetProperty()->SetColor((double *) &color);
+  actor2->GetProperty()->SetPointSize(20.0);
+  return actor2;
+}
+
+int main() {
+  /*
+  // Load femur mesh
   const auto mesh_filepath = "/scratch/karthik/projects/ShapeWorks/Examples/Python/TestFemurMesh/femur/meshes/m03_L_femur.ply";
   auto reader = vtkSmartPointer<vtkPLYReader>::New();
   reader->SetFileName(mesh_filepath);
   reader->Update();
-  const auto mesh = reader->GetOutput();
+  const auto _mesh = reader->GetOutput();
+  */
 
+  auto sphereSource = vtkSmartPointer<vtkSphereSource>::New();
+  sphereSource->SetPhiResolution(100);
+  sphereSource->SetThetaResolution(100);
+  sphereSource->SetRadius(1.0);
+  sphereSource->Update();
+  const auto mesh = sphereSource->GetOutput();
+  std::cout << "Sphere: \n";
   std::cout << "Verts:  " << mesh->GetNumberOfVerts() << "\n";
   std::cout << "Points: " << mesh->GetNumberOfPoints() << "\n";
   std::cout << "Lines:  " << mesh->GetNumberOfLines() << "\n";
   std::cout << "Polys:  " << mesh->GetNumberOfPolys() << "\n";
 
-  /*
-  mesh->GetPolys()->InitTraversal();
-  auto idList = vtkSmartPointer<vtkIdList>::New();
-  while(mesh->GetPolys()->GetNextCell(idList))
-  {
-    std::cout << "Poly has " << idList->GetNumberOfIds() << " points." << std::endl;
-    for(vtkIdType i = 0; i < idList->GetNumberOfIds(); i++)
-    {
-      double v[3];
-      mesh->GetPoint(idList->GetId(i), v);
-      std::cout << v[0] << " " << v[1] << " " << v[2] << "\n";
-    }
-  }
-  */
+  // For nearest point lookup
+  auto cellLocator = vtkSmartPointer<vtkCellLocator>::New();
+  cellLocator->SetDataSet(mesh);
+  cellLocator->BuildLocator();
 
-  auto sphereSource = vtkSmartPointer<vtkSphereSource>::New();
-  sphereSource->Update();
-  const auto sphereMesh = sphereSource->GetOutput();
-  std::cout << "Sphere: \n";
-  std::cout << "Verts:  " << sphereMesh->GetNumberOfVerts() << "\n";
-  std::cout << "Points: " << sphereMesh->GetNumberOfPoints() << "\n";
-  std::cout << "Lines:  " << sphereMesh->GetNumberOfLines() << "\n";
-  std::cout << "Polys:  " << sphereMesh->GetNumberOfPolys() << "\n";
+  // For random point generation
+  const auto numPoints = mesh->GetNumberOfPoints();
+  std::uniform_int_distribution<int> points_dist(0, numPoints);
+  std::default_random_engine re;
+
+  // Benchmark loop
+  // gonna be biased, these rands
+  for(int i=0; i<1000; i++) {
+    const int idx0 = points_dist(re);
+    const int idx1 = points_dist(re);
+
+    Vec3d p0, p1;
+    mesh->GetPoint(idx0, (double *) &p0);
+    mesh->GetPoint(idx1, (double *) &p1);
+
+    Vec3d geo0 = cart_to_geo(p0);
+    Vec3d geo1 = cart_to_geo(p1);
+
+    const double lon0 = geo0.x;
+    const double lat0 = geo0.y;
+    const double lon1 = geo1.x;
+    const double lat1 = geo1.y;
+    const double analytic_soln = analytic_geo_dist(lon0, lat0, lon1, lat1);
+
+    // Find closest point
+    const auto p0_idx = closest_point(p0, cellLocator, mesh);
+    const auto p1_idx = closest_point(p1, cellLocator, mesh);
+    const double dijkstra_soln = dijkstra_geo_dist(p0_idx, p1_idx, mesh);
+
+    const auto diff = std::abs(dijkstra_soln - analytic_soln);
+    std::cout << diff << "\n";
+  }
+
+
+  ////////////////////////////////////////////////////////
+  // Visualization stuff
+  vtkSmartPointer<vtkPolyDataMapper> mapper =
+          vtkSmartPointer<vtkPolyDataMapper>::New();
+  mapper->SetInputData(mesh);
+
+  vtkSmartPointer<vtkActor> actor =
+          vtkSmartPointer<vtkActor>::New();
+  actor->SetMapper(mapper);
+  vtkSmartPointer<vtkActor> actorWire =
+          vtkSmartPointer<vtkActor>::New();
+  actorWire->SetMapper(mapper);
+  actorWire->GetProperty()->SetRepresentationToWireframe();
+  actorWire->GetProperty()->SetColor(0.0, 0.0, 0.0);
+
+  vtkSmartPointer<vtkRenderer> renderer =
+          vtkSmartPointer<vtkRenderer>::New();
+  vtkSmartPointer<vtkRenderWindow> renderWindow =
+          vtkSmartPointer<vtkRenderWindow>::New();
+  renderWindow->AddRenderer(renderer);
+  renderWindow->SetSize(700, 700);
+  vtkSmartPointer<vtkRenderWindowInteractor> renderWindowInteractor =
+          vtkSmartPointer<vtkRenderWindowInteractor>::New();
+  renderWindowInteractor->SetRenderWindow(renderWindow);
+
+  renderer->AddActor(actor);
+  renderer->AddActor(actorWire);
+
+  // stuff for debugging geodesic distance
+  {
+    const double lon = M_PI*3.0/4.0;
+    const double lat = M_PI*1.0/4.0;
+    const auto p = geo_to_cart(lon, lat);
+
+    const auto idx_closest = closest_point(p, cellLocator, mesh);
+    Vec3d pt_closest;
+    mesh->GetPoint(idx_closest, (double *)&pt_closest);
+
+    renderer->AddActor(viz_point(p, {1.0, 0.0, 0.0}));
+    renderer->AddActor(viz_point(pt_closest, {0.0, 1.0, 0.0}));
+  }
+
+  renderWindow->Render();
+  renderWindowInteractor->Start();
+
+	return 0;
+}
+
+/*
+void viz_dijkstra()
+{
 
   auto dijkstra = vtkSmartPointer<vtkDijkstraGraphGeodesicPath>::New();
   dijkstra->SetInputData(mesh);
   dijkstra->SetStartVertex(0);
-  dijkstra->SetEndVertex(8000);
+  dijkstra->SetEndVertex(10);
   dijkstra->Update();
   const auto path = dijkstra->GetOutput();
 
   auto weights = vtkSmartPointer<vtkDoubleArray>::New();
   dijkstra->GetCumulativeWeights(weights);
-  std::cout << "Geodesic distance _maybe_ " << weights->GetValue(8000) << "\n";
+  std::cout << "Geodesic distance _maybe_ " << weights->GetValue(10) << "\n";
 
-  // return 0;
-
-  ////////////////////////////////////////////////////////
   // Visualization stuff
   vtkSmartPointer<vtkPolyDataMapper> mapper =
           vtkSmartPointer<vtkPolyDataMapper>::New();
@@ -103,6 +253,5 @@ int vtk_stuff() {
 
   renderWindow->Render();
   renderWindowInteractor->Start();
-
-	return 0;
 }
+ */

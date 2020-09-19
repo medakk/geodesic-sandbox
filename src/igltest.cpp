@@ -5,7 +5,7 @@
 #include <igl/per_face_normals.h>
 #include <igl/per_vertex_normals.h>
 
-int main() {
+int not_main() {
   const auto mesh_filepath = "/scratch/karthik/projects/ShapeWorks/Examples/Python/TestFemurMesh/femur/meshes/m03_L_femur.ply";
   Eigen::MatrixXd V;
   Eigen::MatrixXi F;
