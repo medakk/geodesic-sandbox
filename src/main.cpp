@@ -15,9 +15,16 @@
 #include <vtkProperty.h>
 #include <vtkDoubleArray.h>
 #include <random>
+#include <igl/exact_geodesic.h>
+#include <igl/heat_geodesics.h>
 
 struct Vec3d {
   double x, y, z;
+};
+
+struct IGLMesh {
+  Eigen::MatrixXd V;
+  Eigen::MatrixXi F;
 };
 
 double analytic_geo_dist(double lon0, double lat0, double lon1, double lat1) {
@@ -94,6 +101,61 @@ vtkSmartPointer<vtkActor> viz_point(const Vec3d &p, const Vec3d &color) {
   return actor2;
 }
 
+IGLMesh into_igl_mesh(vtkPolyData* mesh) {
+  const auto n_verts = mesh->GetNumberOfPoints();
+  const auto n_faces = mesh->GetNumberOfPolys();
+
+  IGLMesh igl_mesh;
+  igl_mesh.V.resize(n_verts, 3);
+  igl_mesh.F.resize(n_faces, 3);
+
+  for(int i=0; i<n_verts; i++) {
+    double p[3];
+    mesh->GetPoint(i, p);
+    igl_mesh.V(i, 0) = p[0];
+    igl_mesh.V(i, 1) = p[1];
+    igl_mesh.V(i, 2) = p[2];
+  }
+
+  mesh->GetPolys()->InitTraversal();
+  vtkSmartPointer<vtkIdList> idList = vtkSmartPointer<vtkIdList>::New();
+  int row = 0;
+  while(mesh->GetPolys()->GetNextCell(idList)) {
+    igl_mesh.F(row, 0) = idList->GetId(0);
+    igl_mesh.F(row, 1) = idList->GetId(1);
+    igl_mesh.F(row, 2) = idList->GetId(2);
+
+    row++;
+  }
+
+  return igl_mesh;
+}
+
+double igl_exact_distance(int i, int j, const IGLMesh& igl_mesh) {
+  Eigen::VectorXi VS, FS, VT, FT;
+  VS.resize(1);
+  VS << i;
+  VT.resize(1);
+  VT << j;
+
+  Eigen::VectorXd d;
+  igl::exact_geodesic(igl_mesh.V, igl_mesh.F, VS, FS, VT, FT, d);
+
+  return d(0);
+}
+
+double igl_heat_distance(int i, int j, const IGLMesh& igl_mesh) {
+  igl::HeatGeodesicsData<double> data;
+  igl::heat_geodesics_precompute(igl_mesh.V,igl_mesh.F,data);
+
+  Eigen::VectorXi gamma;
+  Eigen::VectorXd D;
+  gamma.resize(1); gamma << i;
+  igl::heat_geodesics_solve(data,gamma,D);
+
+  return D(j);
+}
+
 int main() {
   /*
   // Load femur mesh
@@ -126,6 +188,8 @@ int main() {
   std::uniform_int_distribution<int> points_dist(0, numPoints);
   std::default_random_engine re;
 
+  const auto igl_mesh = into_igl_mesh(mesh);
+
   // Benchmark loop
   // gonna be biased, these rands
   for(int i=0; i<1000; i++) {
@@ -145,13 +209,22 @@ int main() {
     const double lat1 = geo1.y;
     const double analytic_soln = analytic_geo_dist(lon0, lat0, lon1, lat1);
 
-    // Find closest point
     const auto p0_idx = closest_point(p0, cellLocator, mesh);
     const auto p1_idx = closest_point(p1, cellLocator, mesh);
-    const double dijkstra_soln = dijkstra_geo_dist(p0_idx, p1_idx, mesh);
 
-    const auto diff = std::abs(dijkstra_soln - analytic_soln);
-    std::cout << diff << "\n";
+    // Find closest point by vtk
+    const double dijkstra_soln = dijkstra_geo_dist(p0_idx, p1_idx, mesh);
+    const auto dijkstra_diff = std::abs(dijkstra_soln - analytic_soln);
+
+    // Find closest point by IGL
+    const double igl_soln = igl_exact_distance(p0_idx, p1_idx, igl_mesh);
+    const auto igl_diff = std::abs(igl_soln - analytic_soln);
+
+    // Find closest point by IGL heat
+    const double igl_heat_soln = igl_heat_distance(p0_idx, p1_idx, igl_mesh);
+    const auto igl_heat_diff = std::abs(igl_heat_soln - analytic_soln);
+
+    std::cout << dijkstra_diff << '\t' << igl_diff << '\t' << igl_heat_diff << "\n";
   }
 
 
