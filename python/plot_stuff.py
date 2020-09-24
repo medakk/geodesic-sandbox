@@ -2,15 +2,31 @@ import sys
 import os
 
 import numpy as np
-import matplotlib.pyplot as plt
 import matplotlib
+import matplotlib.pyplot as plt
+from matplotlib.pyplot import figure
 
 font = {'family' : 'normal',
         'weight' : 'bold',
         'size'   : 22}
 matplotlib.rc('font', **font)
 
-from matplotlib.pyplot import figure
+def autolabel(rects, xpos='center'):
+    """
+    Attach a text label above each bar in *rects*, displaying its height.
+
+    *xpos* indicates which side to place the text w.r.t. the center of
+    the bar. It can be one of the following {'center', 'right', 'left'}.
+    """
+
+    xpos = xpos.lower()  # normalize the case of the parameter
+    ha = {'center': 'center', 'right': 'left', 'left': 'right'}
+    offset = {'center': 0.5, 'right': 0.57, 'left': 0.43}  # x_txt = x + w*off
+
+    for rect in rects:
+        height = rect.get_height()
+        plt.text(rect.get_x() + rect.get_width()*offset[xpos], 1.01*height,
+                '{}'.format(height), ha=ha[xpos], va='bottom')
 
 dirs = [
     'benchmarks/sphere_100',
@@ -61,12 +77,12 @@ for d in dirs:
     avg_ts = np.average(ts, axis=0)
     print(f'Average times: {avg_ts}')
     figure(num=None, figsize=(18, 12), dpi=80, facecolor='w', edgecolor='k')
-    plt.bar(seq, avg_ts)
+    rects = plt.bar(seq, avg_ts)
+    autolabel(rects)
     plt.xticks(seq, mem_labels)
     plt.yscale('log')
     plt.grid(axis='y')
     plt.legend()
     plt.title(f'Average compute time {n_verts} vertices')
-    plt.xlabel('microseconds')
+    plt.ylabel('microseconds')
     plt.show()
-
