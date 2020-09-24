@@ -1,0 +1,4 @@
+verts: 9802
+vtk_dijkstra: 52444k
+igl_exact:    96464k
+igl_heat:     89208k

@@ -19,14 +19,18 @@
 #include <random>
 #include <igl/exact_geodesic.h>
 #include <igl/heat_geodesics.h>
+#include <igl/readPLY.h>
+
+
+struct Vec3d {
+  double x, y, z;
+};
 
 class GeodesicMethod {
 public:
   virtual double distance(int i, int j) = 0;
-};
-
-struct Vec3d {
-  double x, y, z;
+  virtual size_t numVerts() const = 0;
+  virtual Vec3d point(int i) const = 0;
 };
 
 struct IGLMesh {
@@ -35,11 +39,27 @@ struct IGLMesh {
 };
 
 class VTKDijkstra: public GeodesicMethod {
-  vtkPolyData* mesh;
+  vtkSmartPointer<vtkPolyData> mesh;
 
 public:
-  VTKDijkstra(vtkPolyData* _mesh) : mesh(_mesh)
+  VTKDijkstra(const std::string& plyFilePath)
   {
+    auto reader = vtkSmartPointer<vtkPLYReader>::New();
+    reader->SetFileName(plyFilePath.c_str());
+    reader->Update();
+    mesh = reader->GetOutput();
+
+    std::cerr << "VTKDijkstra: loaded mesh with " << numVerts() << " vertices" << std::endl;
+  }
+
+  virtual size_t numVerts() const override {
+    return mesh->GetNumberOfPoints();
+  }
+
+  virtual Vec3d point(int i) const override {
+    Vec3d out;
+    mesh->GetPoint(i, (double *) &out);
+    return out;
   }
 
   virtual double distance(int i, int j) override {
@@ -56,11 +76,27 @@ public:
 };
 
 class IGLExact: public GeodesicMethod {
-  IGLMesh* iglMesh;
+  IGLMesh iglMesh;
 
 public:
-  IGLExact(IGLMesh* _iglMesh) : iglMesh(_iglMesh)
+  IGLExact(const std::string& filepath)
   {
+    igl::readPLY(filepath, iglMesh.V, iglMesh.F);
+
+    std::cerr << "IGLExact: loaded mesh with " << numVerts() << " vertices" << std::endl;
+  }
+
+  virtual size_t numVerts() const override {
+    return iglMesh.V.rows();
+  }
+
+  virtual Vec3d point(int i) const override {
+    Vec3d out = {
+      iglMesh.V(i, 0),
+      iglMesh.V(i, 1),
+      iglMesh.V(i, 2)
+    };
+    return out;
   }
 
   virtual double distance(int i, int j) override {
@@ -71,28 +107,44 @@ public:
     VT << j;
 
     Eigen::VectorXd d;
-    igl::exact_geodesic(iglMesh->V, iglMesh->F, VS, FS, VT, FT, d);
+    igl::exact_geodesic(iglMesh.V, iglMesh.F, VS, FS, VT, FT, d);
 
     return d(0);
   }
 };
 
 class IGLHeat: public GeodesicMethod {
-  IGLMesh* iglMesh;
+  IGLMesh iglMesh;
+  igl::HeatGeodesicsData<double> heatData;
 
 public:
-  IGLHeat(IGLMesh* _iglMesh) : iglMesh(_iglMesh)
+  IGLHeat(const std::string& filepath)
   {
+    igl::readPLY(filepath, iglMesh.V, iglMesh.F);
+    igl::heat_geodesics_precompute(iglMesh.V,iglMesh.F,heatData);
+
+    std::cerr << "IGLHeat: loaded mesh with " << numVerts() << " vertices" << std::endl;
+  }
+
+  virtual size_t numVerts() const override {
+    return iglMesh.V.rows();
+  }
+
+  virtual Vec3d point(int i) const override {
+    Vec3d out = {
+      iglMesh.V(i, 0),
+      iglMesh.V(i, 1),
+      iglMesh.V(i, 2)
+    };
+    return out;
   }
 
   virtual double distance(int i, int j) override {
-    igl::HeatGeodesicsData<double> data;
-    igl::heat_geodesics_precompute(iglMesh->V,iglMesh->F,data);
 
     Eigen::VectorXi gamma;
     Eigen::VectorXd D;
     gamma.resize(1); gamma << i;
-    igl::heat_geodesics_solve(data,gamma,D);
+    igl::heat_geodesics_solve(heatData,gamma,D);
 
     return D(j);
   }
@@ -190,61 +242,30 @@ IGLMesh into_igl_mesh(vtkPolyData* mesh) {
 }
 
 int main(int argc, char *argv[]) {
-  if(argc != 2) {
-    std::cerr << "missing arg" << std::endl;
+  if(argc != 3) {
+    std::cerr << "missing arg(s)" << std::endl;
     return 1;
   }
-  /*
-  // Load femur mesh
-  const auto mesh_filepath = "/scratch/karthik/projects/ShapeWorks/Examples/Python/TestFemurMesh/femur/meshes/m03_L_femur.ply";
-  auto reader = vtkSmartPointer<vtkPLYReader>::New();
-  reader->SetFileName(mesh_filepath);
-  reader->Update();
-  const auto _mesh = reader->GetOutput();
-  */
-
-  auto sphereSource = vtkSmartPointer<vtkSphereSource>::New();
-  sphereSource->SetPhiResolution(100);
-  sphereSource->SetThetaResolution(100);
-  sphereSource->SetRadius(1.0);
-  sphereSource->Update();
-  auto mesh = sphereSource->GetOutput();
-  if(false) {
-    std::cout << "Sphere: \n";
-    std::cout << "Verts:  " << mesh->GetNumberOfVerts() << "\n";
-    std::cout << "Points: " << mesh->GetNumberOfPoints() << "\n";
-    std::cout << "Lines:  " << mesh->GetNumberOfLines() << "\n";
-    std::cout << "Polys:  " << mesh->GetNumberOfPolys() << "\n";
-  }
-
-  // For nearest point lookup
-  auto cellLocator = vtkSmartPointer<vtkCellLocator>::New();
-  cellLocator->SetDataSet(mesh);
-  cellLocator->BuildLocator();
-
-  // For random point generation
-  const auto numPoints = mesh->GetNumberOfPoints();
-  std::uniform_int_distribution<int> points_dist(0, numPoints);
-  std::default_random_engine re;
 
   GeodesicMethod* geodesicFunc;
-  IGLMesh iglMesh;
-
-  //TODO: Benchmarks won't be accurate for IGL stuff till we get rid of VTK :(
-
-  const std::string arg1 = argv[1];
-  if(arg1 == "vtk_dijkstra") {
-    geodesicFunc = new VTKDijkstra(mesh);
-  } else if(arg1 == "igl_exact") {
-    iglMesh = into_igl_mesh(mesh);
-    geodesicFunc = new IGLExact(&iglMesh);
-  } else if(arg1 == "igl_heat") {
-    iglMesh = into_igl_mesh(mesh);
-    geodesicFunc = new IGLHeat(&iglMesh);
+  const std::string whichFunc = argv[1];
+  const std::string plyFilePath = argv[2];
+  if(whichFunc == "vtk_dijkstra") {
+    geodesicFunc = new VTKDijkstra(plyFilePath);
+  } else if(whichFunc == "igl_exact") {
+    geodesicFunc = new IGLExact(plyFilePath);
+  } else if(whichFunc == "igl_heat") {
+    geodesicFunc = new IGLHeat(plyFilePath);
   } else {
     std::cerr << "invalid arg" << std::endl;
     return 1;
   }
+
+  // For random point generation
+  std::uniform_int_distribution<int> points_dist(0, geodesicFunc->numVerts());
+  std::default_random_engine re;
+
+
 
   // Benchmark loop
   // gonna be biased, these rands
@@ -252,29 +273,22 @@ int main(int argc, char *argv[]) {
     const int idx0 = points_dist(re);
     const int idx1 = points_dist(re);
 
-    Vec3d p0, p1;
-    mesh->GetPoint(idx0, (double *) &p0);
-    mesh->GetPoint(idx1, (double *) &p1);
+    const Vec3d p0 = geodesicFunc->point(idx0);
+    const Vec3d p1 = geodesicFunc->point(idx1);
 
     Vec3d geo0 = cart_to_geo(p0);
     Vec3d geo1 = cart_to_geo(p1);
-
     const double lon0 = geo0.x;
     const double lat0 = geo0.y;
     const double lon1 = geo1.x;
     const double lat1 = geo1.y;
     const double analytic_soln = analytic_geo_dist(lon0, lat0, lon1, lat1);
 
-    const auto p0_idx = closest_point(p0, cellLocator, mesh);
-    const auto p1_idx = closest_point(p1, cellLocator, mesh);
-
-
     // Find closest point
     using namespace std::chrono;
     const auto startTime = high_resolution_clock::now();
-    const double soln = geodesicFunc->distance(p0_idx, p1_idx);
+    const double soln = geodesicFunc->distance(idx0, idx1);
     const auto endTime = high_resolution_clock::now();
-
 
     // Print time taken
     std::cout << duration_cast<microseconds>(endTime - startTime).count() << " ";
@@ -290,6 +304,7 @@ int main(int argc, char *argv[]) {
 
   ////////////////////////////////////////////////////////
   // Visualization stuff
+  /*
   vtkSmartPointer<vtkPolyDataMapper> mapper =
           vtkSmartPointer<vtkPolyDataMapper>::New();
   mapper->SetInputData(mesh);
@@ -332,6 +347,7 @@ int main(int argc, char *argv[]) {
 
   renderWindow->Render();
   renderWindowInteractor->Start();
+ */
 
 	return 0;
 }
