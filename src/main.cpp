@@ -1,7 +1,9 @@
 #include <iostream>
 #include <string>
+#include <chrono>
 
 #include <vtkPLYReader.h>
+#include <vtkPLYWriter.h>
 #include <vtkSmartPointer.h>
 #include <vtkPolyData.h>
 #include <vtkPolyDataMapper.h>
@@ -18,6 +20,11 @@
 #include <igl/exact_geodesic.h>
 #include <igl/heat_geodesics.h>
 
+class GeodesicMethod {
+public:
+  virtual double distance(int i, int j) = 0;
+};
+
 struct Vec3d {
   double x, y, z;
 };
@@ -25,6 +32,70 @@ struct Vec3d {
 struct IGLMesh {
   Eigen::MatrixXd V;
   Eigen::MatrixXi F;
+};
+
+class VTKDijkstra: public GeodesicMethod {
+  vtkPolyData* mesh;
+
+public:
+  VTKDijkstra(vtkPolyData* _mesh) : mesh(_mesh)
+  {
+  }
+
+  virtual double distance(int i, int j) override {
+    auto dijkstra = vtkSmartPointer<vtkDijkstraGraphGeodesicPath>::New();
+    dijkstra->SetInputData(mesh);
+    dijkstra->SetStartVertex(i);
+    dijkstra->SetEndVertex(j);
+    dijkstra->Update();
+
+    auto weights = vtkSmartPointer<vtkDoubleArray>::New();
+    dijkstra->GetCumulativeWeights(weights);
+    return weights->GetValue(j);
+  }
+};
+
+class IGLExact: public GeodesicMethod {
+  IGLMesh* iglMesh;
+
+public:
+  IGLExact(IGLMesh* _iglMesh) : iglMesh(_iglMesh)
+  {
+  }
+
+  virtual double distance(int i, int j) override {
+    Eigen::VectorXi VS, FS, VT, FT;
+    VS.resize(1);
+    VS << i;
+    VT.resize(1);
+    VT << j;
+
+    Eigen::VectorXd d;
+    igl::exact_geodesic(iglMesh->V, iglMesh->F, VS, FS, VT, FT, d);
+
+    return d(0);
+  }
+};
+
+class IGLHeat: public GeodesicMethod {
+  IGLMesh* iglMesh;
+
+public:
+  IGLHeat(IGLMesh* _iglMesh) : iglMesh(_iglMesh)
+  {
+  }
+
+  virtual double distance(int i, int j) override {
+    igl::HeatGeodesicsData<double> data;
+    igl::heat_geodesics_precompute(iglMesh->V,iglMesh->F,data);
+
+    Eigen::VectorXi gamma;
+    Eigen::VectorXd D;
+    gamma.resize(1); gamma << i;
+    igl::heat_geodesics_solve(data,gamma,D);
+
+    return D(j);
+  }
 };
 
 double analytic_geo_dist(double lon0, double lat0, double lon1, double lat1) {
@@ -38,18 +109,6 @@ double analytic_geo_dist(double lon0, double lat0, double lon1, double lat1) {
   const double r = 1.0; // radius
 
   return r * central_angle;
-}
-
-double dijkstra_geo_dist(int i, int j, vtkPolyData* mesh) {
-  auto dijkstra = vtkSmartPointer<vtkDijkstraGraphGeodesicPath>::New();
-  dijkstra->SetInputData(mesh);
-  dijkstra->SetStartVertex(i);
-  dijkstra->SetEndVertex(j);
-  dijkstra->Update();
-
-  auto weights = vtkSmartPointer<vtkDoubleArray>::New();
-  dijkstra->GetCumulativeWeights(weights);
-  return weights->GetValue(j);
 }
 
 // assumes r=1.0
@@ -71,7 +130,6 @@ Vec3d cart_to_geo(const Vec3d& p) {
 }
 
 // Find closest point
-
 vtkIdType closest_point(const Vec3d &p, vtkSmartPointer<vtkCellLocator> cellLocator, vtkPolyData* mesh) {
   double closestPoint[3];//the coordinates of the closest point will be returned here
   double closestPointDist2; //the squared distance to the closest point will be returned here
@@ -131,32 +189,11 @@ IGLMesh into_igl_mesh(vtkPolyData* mesh) {
   return igl_mesh;
 }
 
-double igl_exact_distance(int i, int j, const IGLMesh& igl_mesh) {
-  Eigen::VectorXi VS, FS, VT, FT;
-  VS.resize(1);
-  VS << i;
-  VT.resize(1);
-  VT << j;
-
-  Eigen::VectorXd d;
-  igl::exact_geodesic(igl_mesh.V, igl_mesh.F, VS, FS, VT, FT, d);
-
-  return d(0);
-}
-
-double igl_heat_distance(int i, int j, const IGLMesh& igl_mesh) {
-  igl::HeatGeodesicsData<double> data;
-  igl::heat_geodesics_precompute(igl_mesh.V,igl_mesh.F,data);
-
-  Eigen::VectorXi gamma;
-  Eigen::VectorXd D;
-  gamma.resize(1); gamma << i;
-  igl::heat_geodesics_solve(data,gamma,D);
-
-  return D(j);
-}
-
-int main() {
+int main(int argc, char *argv[]) {
+  if(argc != 2) {
+    std::cerr << "missing arg" << std::endl;
+    return 1;
+  }
   /*
   // Load femur mesh
   const auto mesh_filepath = "/scratch/karthik/projects/ShapeWorks/Examples/Python/TestFemurMesh/femur/meshes/m03_L_femur.ply";
@@ -171,12 +208,14 @@ int main() {
   sphereSource->SetThetaResolution(100);
   sphereSource->SetRadius(1.0);
   sphereSource->Update();
-  const auto mesh = sphereSource->GetOutput();
-  std::cout << "Sphere: \n";
-  std::cout << "Verts:  " << mesh->GetNumberOfVerts() << "\n";
-  std::cout << "Points: " << mesh->GetNumberOfPoints() << "\n";
-  std::cout << "Lines:  " << mesh->GetNumberOfLines() << "\n";
-  std::cout << "Polys:  " << mesh->GetNumberOfPolys() << "\n";
+  auto mesh = sphereSource->GetOutput();
+  if(false) {
+    std::cout << "Sphere: \n";
+    std::cout << "Verts:  " << mesh->GetNumberOfVerts() << "\n";
+    std::cout << "Points: " << mesh->GetNumberOfPoints() << "\n";
+    std::cout << "Lines:  " << mesh->GetNumberOfLines() << "\n";
+    std::cout << "Polys:  " << mesh->GetNumberOfPolys() << "\n";
+  }
 
   // For nearest point lookup
   auto cellLocator = vtkSmartPointer<vtkCellLocator>::New();
@@ -188,7 +227,24 @@ int main() {
   std::uniform_int_distribution<int> points_dist(0, numPoints);
   std::default_random_engine re;
 
-  const auto igl_mesh = into_igl_mesh(mesh);
+  GeodesicMethod* geodesicFunc;
+  IGLMesh iglMesh;
+
+  //TODO: Benchmarks won't be accurate for IGL stuff till we get rid of VTK :(
+
+  const std::string arg1 = argv[1];
+  if(arg1 == "vtk_dijkstra") {
+    geodesicFunc = new VTKDijkstra(mesh);
+  } else if(arg1 == "igl_exact") {
+    iglMesh = into_igl_mesh(mesh);
+    geodesicFunc = new IGLExact(&iglMesh);
+  } else if(arg1 == "igl_heat") {
+    iglMesh = into_igl_mesh(mesh);
+    geodesicFunc = new IGLHeat(&iglMesh);
+  } else {
+    std::cerr << "invalid arg" << std::endl;
+    return 1;
+  }
 
   // Benchmark loop
   // gonna be biased, these rands
@@ -212,20 +268,24 @@ int main() {
     const auto p0_idx = closest_point(p0, cellLocator, mesh);
     const auto p1_idx = closest_point(p1, cellLocator, mesh);
 
-    // Find closest point by vtk
-    const double dijkstra_soln = dijkstra_geo_dist(p0_idx, p1_idx, mesh);
-    const auto dijkstra_diff = std::abs(dijkstra_soln - analytic_soln);
 
-    // Find closest point by IGL
-    const double igl_soln = igl_exact_distance(p0_idx, p1_idx, igl_mesh);
-    const auto igl_diff = std::abs(igl_soln - analytic_soln);
+    // Find closest point
+    using namespace std::chrono;
+    const auto startTime = high_resolution_clock::now();
+    const double soln = geodesicFunc->distance(p0_idx, p1_idx);
+    const auto endTime = high_resolution_clock::now();
 
-    // Find closest point by IGL heat
-    const double igl_heat_soln = igl_heat_distance(p0_idx, p1_idx, igl_mesh);
-    const auto igl_heat_diff = std::abs(igl_heat_soln - analytic_soln);
 
-    std::cout << dijkstra_diff << '\t' << igl_diff << '\t' << igl_heat_diff << "\n";
+    // Print time taken
+    std::cout << duration_cast<microseconds>(endTime - startTime).count() << " ";
+
+    // Print error
+    const auto diff = std::abs(soln - analytic_soln);
+    std::cout << diff << " ";
+
+    std::cout << std::endl;
   }
+  return 0;
 
 
   ////////////////////////////////////////////////////////
