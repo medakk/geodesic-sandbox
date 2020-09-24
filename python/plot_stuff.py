@@ -58,9 +58,15 @@ for d in dirs:
     plt.xlabel('L1 Error')
     plt.show()
 
+    avg_ts = np.average(ts, axis=0)
+    print(f'Average times: {avg_ts}')
     figure(num=None, figsize=(18, 12), dpi=80, facecolor='w', edgecolor='k')
-    plt.hist(ts, 10, label=['VTK Dijkstra', 'IGL Exact', 'IGL Heat'])
+    plt.bar(seq, avg_ts)
+    plt.xticks(seq, mem_labels)
+    plt.yscale('log')
+    plt.grid(axis='y')
     plt.legend()
-    plt.title(f'Compute time {n_verts} vertices')
+    plt.title(f'Average compute time {n_verts} vertices')
     plt.xlabel('microseconds')
     plt.show()
+
