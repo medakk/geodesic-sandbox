@@ -150,6 +150,35 @@ public:
   }
 };
 
+class Euclidean: public GeodesicMethod {
+  IGLMesh iglMesh;
+
+public:
+  Euclidean(const std::string& filepath)
+  {
+    igl::readPLY(filepath, iglMesh.V, iglMesh.F);
+
+    std::cerr << "Euclidean: loaded mesh with " << numVerts() << " vertices" << std::endl;
+  }
+
+  virtual size_t numVerts() const override {
+    return iglMesh.V.rows();
+  }
+
+  virtual Vec3d point(int i) const override {
+    Vec3d out = {
+            iglMesh.V(i, 0),
+            iglMesh.V(i, 1),
+            iglMesh.V(i, 2)
+    };
+    return out;
+  }
+
+  virtual double distance(int i, int j) override {
+    return (iglMesh.V.row(i) - iglMesh.V.row(j)).norm();
+  }
+};
+
 double analytic_geo_dist(double lon0, double lat0, double lon1, double lat1) {
   // https://en.wikipedia.org/wiki/Great-circle_distance
   const double del_lon = std::abs(lon0 - lon1);
@@ -256,6 +285,8 @@ int main(int argc, char *argv[]) {
     geodesicFunc = new IGLExact(plyFilePath);
   } else if(whichFunc == "igl_heat") {
     geodesicFunc = new IGLHeat(plyFilePath);
+  } else if(whichFunc == "euclidean") {
+    geodesicFunc = new Euclidean(plyFilePath);
   } else {
     std::cerr << "invalid arg" << std::endl;
     return 1;
@@ -291,7 +322,8 @@ int main(int argc, char *argv[]) {
     const auto endTime = high_resolution_clock::now();
 
     // Print time taken
-    std::cout << duration_cast<microseconds>(endTime - startTime).count() << " ";
+    const duration<double> elapsed = endTime - startTime;
+    std::cout << elapsed.count() << " ";
 
     // Print error
     const auto diff = std::abs(soln - analytic_soln);
