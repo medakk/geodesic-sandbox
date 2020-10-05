@@ -59,6 +59,7 @@ public:
   virtual Vec3d point(int i) const override {
     Vec3d out;
     mesh->GetPoint(i, (double *) &out);
+
     return out;
   }
 
@@ -145,8 +146,48 @@ public:
     Eigen::VectorXd D;
     gamma.resize(1); gamma << i;
     igl::heat_geodesics_solve(heatData,gamma,D);
-
     return D(j);
+  }
+};
+
+class IGLCachedHeat: public GeodesicMethod {
+  IGLMesh iglMesh;
+  Eigen::MatrixXd D;
+
+public:
+  IGLCachedHeat(const std::string& filepath)
+  {
+    igl::readPLY(filepath, iglMesh.V, iglMesh.F);
+    igl::HeatGeodesicsData<double> heatData;
+    igl::heat_geodesics_precompute(iglMesh.V,iglMesh.F,heatData); //TODO Checkout heat paramater
+
+    Eigen::VectorXd d;
+    Eigen::VectorXi gamma(1);
+    D.resize(numVerts(), numVerts());
+    for(int i=0; i<numVerts(); i++) {
+      gamma(0) = i;
+      igl::heat_geodesics_solve(heatData, gamma, d);
+      D.row(i) = d;
+    }
+
+    std::cerr << "IGLCachedHeat: loaded mesh with " << numVerts() << " vertices" << std::endl;
+  }
+
+  virtual size_t numVerts() const override {
+    return iglMesh.V.rows();
+  }
+
+  virtual Vec3d point(int i) const override {
+    Vec3d out = {
+            iglMesh.V(i, 0),
+            iglMesh.V(i, 1),
+            iglMesh.V(i, 2)
+    };
+    return out;
+  }
+
+  virtual double distance(int i, int j) override {
+    return D(i, j);
   }
 };
 
@@ -256,6 +297,8 @@ int main(int argc, char *argv[]) {
     geodesicFunc = new IGLExact(plyFilePath);
   } else if(whichFunc == "igl_heat") {
     geodesicFunc = new IGLHeat(plyFilePath);
+  } else if(whichFunc == "igl_cached_heat") {
+    geodesicFunc = new IGLCachedHeat(plyFilePath);
   } else {
     std::cerr << "invalid arg" << std::endl;
     return 1;
@@ -264,8 +307,6 @@ int main(int argc, char *argv[]) {
   // For random point generation
   std::uniform_int_distribution<int> points_dist(0, geodesicFunc->numVerts());
   std::default_random_engine re;
-
-
 
   // Benchmark loop
   // gonna be biased, these rands
@@ -291,7 +332,7 @@ int main(int argc, char *argv[]) {
     const auto endTime = high_resolution_clock::now();
 
     // Print time taken
-    std::cout << duration_cast<microseconds>(endTime - startTime).count() << " ";
+    std::cout << duration_cast<nanoseconds>(endTime - startTime).count() << " ";
 
     // Print error
     const auto diff = std::abs(soln - analytic_soln);

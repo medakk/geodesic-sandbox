@@ -10,32 +10,18 @@ option(LIBIGL_WITH_OPENGL_GLFW       "Use GLFW"           OFF)
 find_package(LIBIGL REQUIRED)
 
 ### vtk
-find_package(VTK REQUIRED)
+find_package(VTK REQUIRED NO_MODULE)
 if (NOT VTK_FOUND)
   message(FATAL_ERROR "VTK is required, but could not be found! Make sure path to VTKConfig.cmake is included in CMAKE_PREFIX_PATH")
 endif()
 include(${VTK_USE_FILE})
 
-### vxl
-FIND_PACKAGE(VXL REQUIRED)
-IF(VXL_FOUND)
-  # this adds deprecated VXL variables to the cmake namespace (TODO: use the new ones)
-  INCLUDE (${VXL_CMAKE_DIR}/UseVXL.cmake)
-ELSE(VXL_FOUND)
-  MESSAGE(SEND_ERROR "VXL is required, but could not be found! Make sure path to VXLConfig.cmake is included in CMAKE_PREFIX_PATH")
-ENDIF(VXL_FOUND)
-
-### ITK
-FIND_PACKAGE(ITK REQUIRED)
-IF (ITK_FOUND)
-  INCLUDE(${ITK_USE_FILE})
-ELSE()
-  MESSAGE(SEND_ERROR "ITK (The Insight Toolkit) is required, but could not be found! Make sure path to ITKConfig.cmake is included in CMAKE_PREFIX_PATH")
-ENDIF()
-
 ### Eigen
 find_package (Eigen3 3.3 REQUIRED NO_MODULE)
 
-add_executable(geotest src/main.cpp src/igltest.cpp)
+file(GLOB CPP_SRC
+        "src/*.cpp"
+        )
+add_executable(geotest ${CPP_SRC})
 target_include_directories(geotest PUBLIC src/)
 target_link_libraries(geotest ${VTK_LIBRARIES} igl::core)

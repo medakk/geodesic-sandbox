@@ -1,0 +1,1570 @@
+Trying to load: /tmp/meshfim
+No vertT file!!!
+ Writing...
+stop distance = 3.1415
+# vertices in mesh: 9802
+failed to find vertex within 0.0703738 for point (-2.23265e+12, 0.00366988, -7.03333e+13). using vertex 0
+1027605ns 0.00395098 
+failed to find vertex within 0.0703738 for point (-1.96844e+18, 3.12875e+19, -1.94512e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (-3.03644e+19, 7.79626e+18, 1.94512e+19). using vertex 0
+45553ns 0.00867514 
+26227ns 1.56374 
+failed to find vertex within 0.0703738 for point (1.14711e+24, 2.08659e+24, 4.19856e+23). using vertex 0
+31512ns 0.0183328 
+failed to find vertex within 0.0703738 for point (4.7772e+33, 8.6897e+33, 3.0834e+33). using vertex 0
+failed to find vertex within 0.0703738 for point (-2.89917e+07, 1.36425e+07, -9.963e+06). using vertex 0
+40696ns 0.484609 
+22800ns 0.387576 
+failed to find vertex within 0.0703738 for point (-3.58711e+19, -6.84278e+18, -5.25049e+18). using vertex 0
+41150ns 1.03078 
+20437ns 0.821602 
+failed to find vertex within 0.0703738 for point (3.37435e+21, 5.31712e+21, 7.03882e+21). using vertex 0
+35131ns 0.00837955 
+20008ns 0.0185157 
+failed to find vertex within 0.0703738 for point (1.48145e+19, -8.14432e+18, -3.27922e+19). using vertex 0
+31718ns 0.0426566 
+failed to find vertex within 0.0703738 for point (-7.50374e+09, -4.12522e+09, 6.80752e+08). using vertex 0
+failed to find vertex within 0.0703738 for point (4.09274e+18, -2.25e+18, -3.65967e+19). using vertex 0
+41203ns 2.84924 
+failed to find vertex within 0.0703738 for point (1.95673e+19, -3.08331e+19, 5.25049e+18). using vertex 0
+30926ns 1.13075 
+failed to find vertex within 0.0703738 for point (-2.37494e+19, -1.30563e+19, -2.50326e+19). using vertex 0
+31327ns 0.0386045 
+23361ns 0.00446142 
+26472ns 0.015645 
+failed to find vertex within 0.0703738 for point (-1.49062e+12, -2.84351e+11, 1.59151e+12). using vertex 0
+37838ns 0.0114128 
+failed to find vertex within 0.0703738 for point (7.12597e+18, -1.29621e+19, -3.37984e+19). using vertex 0
+32433ns 0.0107887 
+failed to find vertex within 0.0703738 for point (-8.63783e+18, -9.19836e+18, -3.46685e+19). using vertex 0
+29590ns 0.000813646 
+21746ns 0.0294178 
+failed to find vertex within 0.0703738 for point (2.54092e+19, -1.59861e+18, 2.67011e+19). using vertex 0
+32357ns 0.00684146 
+23333ns 0.00307851 
+failed to find vertex within 0.0703738 for point (-1.22662e+29, -4.85652e+28, -8.77721e+28). using vertex 0
+31115ns 0.0012271 
+30558ns 0.06006 
+22697ns 0.494989 
+18348ns 0.000986346 
+25840ns 0.00596839 
+20348ns 0.018037 
+29525ns 0.0514438 
+failed to find vertex within 0.0703738 for point (-4.54209e+33, 3.30002e+33, 8.73608e+33). using vertex 0
+failed to find vertex within 0.0703738 for point (1.95496e+19, 7.03827e+18, 7.07981e+19). using vertex 0
+43368ns 1.25654 
+failed to find vertex within 0.0703738 for point (2.75299e+19, -2.00017e+19, 1.42536e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (-4.18089e+29, 2.63039e+28, -1.85476e+30). using vertex 0
+41976ns 4.7499 
+failed to find vertex within 0.0703738 for point (-2.47674e+26, -1.55823e+25, 5.67044e+26). using vertex 0
+31839ns 0.646812 
+failed to find vertex within 0.0703738 for point (-3.29911e+19, 2.07562e+18, 1.63832e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (-1.46751e+19, 1.85389e+18, -3.37984e+19). using vertex 0
+42419ns 0.919004 
+failed to find vertex within 0.0703738 for point (9.95646e+17, -1.58253e+19, 3.33121e+19). using vertex 0
+30103ns 0.00393259 
+33328ns 0.0377529 
+failed to find vertex within 0.0703738 for point (-3.92074e+09, 4.17517e+09, -6.40177e+09). using vertex 0
+31084ns 0.567228 
+23671ns 0.645987 
+23598ns 0.371714 
+22146ns 0.0203601 
+failed to find vertex within 0.0703738 for point (2114.72, 1.1512e+19, 3.50514e+19). using vertex 0
+35237ns 0.127393 
+failed to find vertex within 0.0703738 for point (6.37568e+28, -1.3549e+29, -5.1826e+28). using vertex 0
+failed to find vertex within 0.0703738 for point (6.10475e+09, 5.05029e+09, -3.31868e+09). using vertex 0
+39479ns 3.71708 
+failed to find vertex within 0.0703738 for point (1.01645e+34, 0.0848126, -2.12683e+33). using vertex 0
+failed to find vertex within 0.0703738 for point (1.56591e+19, 3.32772e+19, 2.92381e+18). using vertex 0
+44329ns 1.13187 
+20231ns 0.0314578 
+failed to find vertex within 0.0703738 for point (2.1234e+18, 3.36214e+19, -1.53901e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (-3.32814e+23, -1.74467e+24, 1.64054e+24). using vertex 0
+41413ns 0.233959 
+failed to find vertex within 0.0703738 for point (6.96836e+18, -4.38412e+17, -3.62268e+19). using vertex 0
+30741ns 0.403427 
+23101ns 0.409828 
+failed to find vertex within 0.0703738 for point (2.1356e+19, -2.9394e+19, -6.40649e+18). using vertex 0
+failed to find vertex within 0.0703738 for point (1.99461e+19, 6415.16, 3.10368e+19). using vertex 0
+38737ns 0.468391 
+17498ns 0.00604716 
+22206ns 0.635541 
+failed to find vertex within 0.0703738 for point (-1.25243e+18, 1.99068e+19, 3.10368e+19). using vertex 0
+29976ns 1.56781 
+28954ns 0.105122 
+21920ns 0.0149773 
+failed to find vertex within 0.0703738 for point (2.16827e+19, 2.98437e+19, 5.85351e+17). using vertex 0
+29860ns 0.00791321 
+failed to find vertex within 0.0703738 for point (-2.98156e+19, -3.76658e+18, -2.14003e+19). using vertex 0
+31004ns 0.046404 
+failed to find vertex within 0.0703738 for point (-7.42442e+09, 4.67105e+08, 4.29497e+09). using vertex 0
+32653ns 1.25125 
+failed to find vertex within 0.0703738 for point (-6633.56, -3.61114e+19, -7.55603e+18). using vertex 0
+30891ns 0.0578801 
+24832ns 0.913176 
+failed to find vertex within 0.0703738 for point (-7.88051e+18, -8.39189e+18, 3.50514e+19). using vertex 0
+32260ns 0.00596598 
+failed to find vertex within 0.0703738 for point (7.41686e+18, 1.02084e+19, 3.46685e+19). using vertex 0
+31342ns 1.13431 
+25735ns 0.286379 
+30373ns 0.00493208 
+failed to find vertex within 0.0703738 for point (-2.38829e+08, -1.31298e+08, -3.68935e+19). using vertex 0
+32278ns 1.65337 
+18279ns 0.0758285 
+failed to find vertex within 0.0703738 for point (-4.34741e+18, -4.62941e+19, -5.72623e+19). using vertex 0
+39544ns 0.0161279 
+26074ns 0.0371642 
+41889ns 0.030951 
+failed to find vertex within 0.0703738 for point (-1.05381e+19, -1.91687e+19, -2.97092e+19). using vertex 0
+32920ns 3.42492 
+34091ns 0.0113458 
+19092ns 0.00130446 
+failed to find vertex within 0.0703738 for point (-2.09013e+19, 2.87682e+19, -9.83115e+18). using vertex 0
+31649ns 0.421058 
+failed to find vertex within 0.0703738 for point (7.79026e+18, 4.28273e+18, 2.45779e+18). using vertex 0
+29069ns 0.614244 
+failed to find vertex within 0.0703738 for point (-6.34283e+18, -6.75442e+18, 3.5711e+19). using vertex 0
+31931ns 0.0212191 
+failed to find vertex within 0.0703738 for point (-3.04742e+19, 3.84979e+18, -2.0436e+19). using vertex 0
+30320ns 0.0151547 
+failed to find vertex within 0.0703738 for point (1.52556e+33, 6.04012e+32, -1.02542e+34). using vertex 0
+30148ns 0.0586387 
+failed to find vertex within 0.0703738 for point (5807.16, -3.61114e+19, -7.55603e+18). using vertex 0
+38275ns 0.0429888 
+21322ns 0.0319966 
+failed to find vertex within 0.0703738 for point (2.14014e+19, 2.00972e+19, -2.23431e+19). using vertex 0
+31149ns 0.552351 
+20374ns 0.491054 
+19453ns 0.0228829 
+23611ns 0.683051 
+22102ns 0.11485 
+failed to find vertex within 0.0703738 for point (2.31559e+19, -1.91562e+19, -2.14003e+19). using vertex 0
+30375ns 0.348318 
+23648ns 1.20202 
+failed to find vertex within 0.0703738 for point (1.95794e+19, 2.36674e+19, 2.0436e+19). using vertex 0
+34318ns 0.509729 
+failed to find vertex within 0.0703738 for point (-5.9496e+19, 4.04236e+19, 1.6254e+19). using vertex 0
+31427ns 1.30824 
+20827ns 0.436099 
+failed to find vertex within 0.0703738 for point (-2.50928e+19, -1.37949e+19, -2.32633e+19). using vertex 0
+34429ns 0.0237931 
+21653ns 0.690934 
+19228ns 0.223805 
+20559ns 0.00375952 
+20513ns 0.0333842 
+25269ns 1.33138 
+23816ns 0.0229402 
+failed to find vertex within 0.0703738 for point (1.84505e+19, -1.34051e+19, -2.90002e+19). using vertex 0
+35435ns 0.690285 
+28068ns 0.630189 
+failed to find vertex within 0.0703738 for point (-3.47271e+19, 8.91641e+18, -8.69797e+18). using vertex 0
+failed to find vertex within 0.0703738 for point (-1.03736e+19, -6.52651e+17, 3.5399e+19). using vertex 0
+46079ns 1.04671 
+failed to find vertex within 0.0703738 for point (2.71502e+19, 1.97258e+19, 1.53261e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (47228.7, -119286, -26844.8). using vertex 0
+38435ns 0.834116 
+failed to find vertex within 0.0703738 for point (3.03869e+19, -9.87331e+18, 1.84467e+19). using vertex 0
+32418ns 0.573149 
+24226ns 0.0364361 
+20404ns 0.0486162 
+failed to find vertex within 0.0703738 for point (1.30903e+19, 3.30624e+19, 9.83115e+18). using vertex 0
+31812ns 0.0132997 
+22313ns 6.26655e-05 
+failed to find vertex within 0.0703738 for point (2.74521e+18, -3.77846e+18, -3.65967e+19). using vertex 0
+31596ns 0.000590396 
+24413ns 0.573167 
+19118ns 0.0500314 
+failed to find vertex within 0.0703738 for point (3.51507e+14, 1.65407e+14, -4.07426e+14). using vertex 0
+28305ns 0.54654 
+failed to find vertex within 0.0703738 for point (-3.84979e+18, -3.04742e+19, -2.0436e+19). using vertex 0
+36830ns 0.0214829 
+20928ns 0.982384 
+failed to find vertex within 0.0703738 for point (8.34591e+18, 3.25052e+19, -1.53261e+19). using vertex 0
+31509ns 0.00119832 
+failed to find vertex within 0.0703738 for point (5125.93, 40575.9, 124526). using vertex 0
+30995ns 0.00129671 
+25013ns 0.450044 
+20486ns 0.0273383 
+21626ns 0.371833 
+28720ns 0.0115154 
+22021ns 0.541304 
+failed to find vertex within 0.0703738 for point (-2.32774e+19, 2.81376e+19, -5.25049e+18). using vertex 0
+30338ns 0.00909231 
+21340ns 0.00764926 
+failed to find vertex within 0.0703738 for point (3.10059e+07, -1.22761e+07, -3.71911e+06). using vertex 0
+failed to find vertex within 0.0703738 for point (-3.94822e+28, 4.98776e+27, 1.53378e+29). using vertex 0
+41300ns 0.472829 
+failed to find vertex within 0.0703738 for point (6.52673e+18, 2.54299e+19, -2.58432e+19). using vertex 0
+31594ns 0.0326692 
+26572ns 0.00774042 
+33888ns 0.0386212 
+failed to find vertex within 0.0703738 for point (2.32946e+19, -4.44369e+18, -2.82621e+19). using vertex 0
+29853ns 0.0594562 
+failed to find vertex within 0.0703738 for point (1.0776e+19, -1.3026e+19, 3.27922e+19). using vertex 0
+35580ns 0.0187996 
+failed to find vertex within 0.0703738 for point (-5.46923e+09, -6.61116e+09, -4.08726e+08). using vertex 0
+31309ns 0.0128853 
+21531ns 0.000551829 
+24270ns 0.00279466 
+21512ns 0.014244 
+20973ns 0.140025 
+failed to find vertex within 0.0703738 for point (5.92486e+28, 1.07773e+29, 9.99151e+28). using vertex 0
+37275ns 0.0447639 
+failed to find vertex within 0.0703738 for point (-1.97461e+19, 3.11149e+19, -1.75546e+18). using vertex 0
+30584ns 0.00883377 
+failed to find vertex within 0.0703738 for point (-8.84329e+18, -3.44423e+19, -9.83115e+18). using vertex 0
+failed to find vertex within 0.0703738 for point (-1.30784e+19, 2.7793e+19, 2.0436e+19). using vertex 0
+39474ns 0.207444 
+failed to find vertex within 0.0703738 for point (3.11149e+19, 1.97461e+19, -1.75546e+18). using vertex 0
+31727ns 0.263121 
+30611ns 0.469981 
+21344ns 0.0189236 
+20030ns 0.0495813 
+failed to find vertex within 0.0703738 for point (4.19649e+09, -1.36352e+09, 7.37002e+09). using vertex 0
+33446ns 1.06714 
+21307ns 0.580372 
+failed to find vertex within 0.0703738 for point (-5.37262e+18, -1.14174e+19, -3.46685e+19). using vertex 0
+29199ns 0.827586 
+23110ns 0.010647 
+failed to find vertex within 0.0703738 for point (-1.97974e+28, 1.56712e+29, 1.25577e+28). using vertex 0
+29549ns 1.01143 
+19738ns 0.50157 
+19018ns 0.0774197 
+failed to find vertex within 0.0703738 for point (-1.00972e+19, 2.14577e+19, 2.82621e+19). using vertex 0
+31068ns 0.496649 
+failed to find vertex within 0.0703738 for point (-2.5718e+14, 2.12758e+14, 4.53327e+14). using vertex 0
+35961ns 1.49121 
+31077ns 0.402088 
+28003ns 0.0162023 
+20990ns 0.00570726 
+failed to find vertex within 0.0703738 for point (6.76661e+18, 3.54718e+19, -7.55603e+18). using vertex 0
+27935ns 0.767295 
+26302ns 0.269283 
+26224ns 0.0217707 
+failed to find vertex within 0.0703738 for point (4.38412e+17, -6.96836e+18, 3.62268e+19). using vertex 0
+35491ns 0.0377635 
+failed to find vertex within 0.0703738 for point (-1.6796e+19, -3.05519e+19, -1.20667e+19). using vertex 0
+32876ns 0.0326492 
+failed to find vertex within 0.0703738 for point (1.84458e+12, 4.73608e+11, -1.09951e+12). using vertex 0
+30236ns 2.94853 
+failed to find vertex within 0.0703738 for point (2.36444e+18, 1.23948e+19, -3.46685e+19). using vertex 0
+32300ns 0.0129214 
+failed to find vertex within 0.0703738 for point (-5.05167e+28, -1.27591e+29, -7.92282e+28). using vertex 0
+32055ns 2.2528 
+25250ns 0.17309 
+failed to find vertex within 0.0703738 for point (-8.16238e+06, -2.09574e+06, -3.2479e+07). using vertex 0
+29822ns 1.05829 
+failed to find vertex within 0.0703738 for point (-8.61386e+17, -2.17561e+18, -3.68192e+19). using vertex 0
+30780ns 1.38969 
+19917ns 0.0178023 
+failed to find vertex within 0.0703738 for point (-9.4286e+18, 1.13972e+19, 3.37984e+19). using vertex 0
+32413ns 1.79217 
+failed to find vertex within 0.0703738 for point (5.83722e+18, -1.47431e+19, 3.33121e+19). using vertex 0
+30557ns 0.595267 
+29483ns 0.0135807 
+17373ns 0.0142788 
+failed to find vertex within 0.0703738 for point (-2.91902e+33, 8.98383e+33, 4.31392e+33). using vertex 0
+39387ns 1.13725 
+failed to find vertex within 0.0703738 for point (-3.04742e+19, -3.84979e+18, 2.0436e+19). using vertex 0
+30619ns 0.0644445 
+21763ns 0.257485 
+failed to find vertex within 0.0703738 for point (79.6146, -74.8964, 63.0398). using vertex 0
+29733ns 0.0199014 
+failed to find vertex within 0.0703738 for point (2.94569e+28, -5.6192e+27, -1.55593e+29). using vertex 0
+31519ns 0.13428 
+failed to find vertex within 0.0703738 for point (1.25083e+07, 4.95238e+06, -3.07395e+07). using vertex 0
+30540ns 1.5405 
+19533ns 0.0385681 
+failed to find vertex within 0.0703738 for point (-1.01546e+19, -1.60012e+19, -3.1654e+19). using vertex 0
+33902ns 1.56564 
+26580ns 0.00730226 
+28980ns 0.0131087 
+24658ns 0.396687 
+24171ns 0.0485475 
+failed to find vertex within 0.0703738 for point (1.2707e+19, 2.0023e+19, 2.82621e+19). using vertex 0
+31143ns 0.0296715 
+failed to find vertex within 0.0703738 for point (-1.45117e+19, -1.05434e+19, 3.22394e+19). using vertex 0
+29919ns 1.66981 
+failed to find vertex within 0.0703738 for point (1.05434e+19, 1.45117e+19, 3.22394e+19). using vertex 0
+31439ns 0.0475094 
+failed to find vertex within 0.0703738 for point (-16.4812, -26.1694, -17.9961). using vertex 0
+failed to find vertex within 0.0703738 for point (-6.21822e+28, 1.13109e+29, -9.19137e+28). using vertex 0
+39480ns 3.36941 
+failed to find vertex within 0.0703738 for point (-2.84361e+19, -7.30114e+18, -2.23431e+19). using vertex 0
+35759ns 0.0270413 
+failed to find vertex within 0.0703738 for point (1.11953e+19, -2.37913e+19, -2.58799e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (3.67049e+19, 2.30928e+18, 2.92381e+18). using vertex 0
+39701ns 0.956224 
+20285ns 0.0114571 
+23961ns 0.0240777 
+28146ns 0.00325766 
+19785ns 0.00251598 
+24152ns 0.0325428 
+failed to find vertex within 0.0703738 for point (1.35387e+19, -3.41948e+19, -2.92381e+18). using vertex 0
+28417ns 1.40377 
+21131ns 0.0342775 
+failed to find vertex within 0.0703738 for point (-1.07036e+19, 4.23785e+18, 3.50514e+19). using vertex 0
+32197ns 0.00103945 
+failed to find vertex within 0.0703738 for point (-1.89297e+19, -8.90765e+18, -3.03883e+19). using vertex 0
+32252ns 0.338114 
+failed to find vertex within 0.0703738 for point (-1.69056e+19, 2.47152e+08, -3.27922e+19). using vertex 0
+30757ns 0.0365213 
+21181ns 0.286402 
+28980ns 0.296733 
+failed to find vertex within 0.0703738 for point (2.99289e+28, -1.88297e+27, -1.55593e+29). using vertex 0
+failed to find vertex within 0.0703738 for point (6.11849e+18, 3.36367e+18, 3.62268e+19). using vertex 0
+41121ns 0.013404 
+19781ns 0.350692 
+failed to find vertex within 0.0703738 for point (-2.64927e+13, 1.38879e+14, -5.44907e+14). using vertex 0
+failed to find vertex within 0.0703738 for point (-1.44972e+23, -2.30426e+24, 7.17909e+23). using vertex 0
+42634ns 1.17459 
+31710ns 0.00819612 
+failed to find vertex within 0.0703738 for point (-6.86272e+18, -4.35521e+18, 3.5987e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (-2.37726e+36, -1.49565e+35, 1.18053e+36). using vertex 0
+44247ns 0.941431 
+failed to find vertex within 0.0703738 for point (-9.1016e+18, -1.73622e+18, -3.5711e+19). using vertex 0
+30467ns 0.678912 
+26582ns 0.0405241 
+20343ns 0.0126008 
+failed to find vertex within 0.0703738 for point (-8.46264e+18, -3.29598e+19, -1.42536e+19). using vertex 0
+29303ns 0.0144242 
+failed to find vertex within 0.0703738 for point (-5.36562e+18, 2.81276e+19, 2.32633e+19). using vertex 0
+30169ns 0.4281 
+20617ns 0.0260136 
+18247ns 0.516339 
+32457ns 0.491752 
+failed to find vertex within 0.0703738 for point (-3.49519e+19, -4.41545e+18, -1.09544e+19). using vertex 0
+29605ns 0.0416736 
+28821ns 0.037711 
+19692ns 0.130467 
+failed to find vertex within 0.0703738 for point (-3.29153e+13, -1.72548e+14, 5.34842e+14). using vertex 0
+31097ns 1.83668 
+failed to find vertex within 0.0703738 for point (-8.81223e+18, -2.86327e+18, -3.5711e+19). using vertex 0
+36292ns 0.0558852 
+24412ns 0.0243604 
+20992ns 0.0463702 
+failed to find vertex within 0.0703738 for point (2.11883e+18, -1.67723e+19, 3.27922e+19). using vertex 0
+31509ns 0.0318548 
+20186ns 0.0274329 
+failed to find vertex within 0.0703738 for point (1.72726e+19, -3.14187e+19, -8.69797e+18). using vertex 0
+31810ns 0.604621 
+18835ns 0.16651 
+22968ns 0.603352 
+failed to find vertex within 0.0703738 for point (-2.34902e+19, 2.83947e+19, -1.75546e+18). using vertex 0
+failed to find vertex within 0.0703738 for point (-9.19266e+18, -1.1613e+18, 3.5711e+19). using vertex 0
+39742ns 0.00352423 
+failed to find vertex within 0.0703738 for point (3.60402e+19, -2.26746e+18, -7.55603e+18). using vertex 0
+30139ns 0.348239 
+failed to find vertex within 0.0703738 for point (1.83178e+28, 1.45e+29, 6.12188e+28). using vertex 0
+31915ns 0.405273 
+21621ns 0.0351257 
+27089ns 0.0204363 
+failed to find vertex within 0.0703738 for point (-3.11021e+19, 3.92911e+18, -1.94512e+19). using vertex 0
+32484ns 0.0108244 
+failed to find vertex within 0.0703738 for point (-1.80295e+18, -1.49153e+18, 3.68192e+19). using vertex 0
+31466ns 1.63994 
+failed to find vertex within 0.0703738 for point (-2.54703e+19, -2.10709e+19, 1.63832e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (-2.19074e+19, -2.05724e+19, 2.14003e+19). using vertex 0
+40472ns 0.00749522 
+19187ns 0.0177448 
+29360ns 0.0397263 
+21639ns 0.440637 
+24792ns 0.432467 
+failed to find vertex within 0.0703738 for point (1.4208e+33, -3.58853e+33, 9.64072e+33). using vertex 0
+failed to find vertex within 0.0703738 for point (1.01651e+29, -8.40928e+28, -8.77721e+28). using vertex 0
+40908ns 5.21164 
+failed to find vertex within 0.0703738 for point (-1.36536e-11, -74326.5, -107962). using vertex 0
+31355ns 0.966097 
+failed to find vertex within 0.0703738 for point (3.23634e+19, -1.05155e+19, 1.42536e+19). using vertex 0
+32927ns 0.0484057 
+23074ns 0.010024 
+failed to find vertex within 0.0703738 for point (-2.02597e+19, -1.67603e+19, 2.58799e+19). using vertex 0
+45372ns 0.588625 
+19430ns 0.614756 
+failed to find vertex within 0.0703738 for point (6.23706e+28, 9.82804e+28, -1.07514e+29). using vertex 0
+41989ns 0.85911 
+failed to find vertex within 0.0703738 for point (3.18768e+19, -1.50001e+19, 1.09544e+19). using vertex 0
+38495ns 0.29634 
+failed to find vertex within 0.0703738 for point (3388.93, 7201.84, -1930.98). using vertex 0
+39236ns 0.06421 
+20762ns 0.0166542 
+failed to find vertex within 0.0703738 for point (-1.84402e+24, -1.52551e+24, -3.44096e+23). using vertex 0
+28157ns 0.0625761 
+19313ns 0.0196657 
+20152ns 0.0220858 
+21390ns 0.468731 
+28319ns 1.28641 
+18510ns 0.0307338 
+23154ns 0.00498956 
+20397ns 0.478079 
+26457ns 0.00103467 
+20502ns 0.105622 
+28548ns 0.0122942 
+21873ns 0.0795543 
+failed to find vertex within 0.0703738 for point (-1.63888e+19, -2.25572e+19, 2.41601e+19). using vertex 0
+35344ns 0.0359192 
+failed to find vertex within 0.0703738 for point (3105.5, 1.69056e+19, -3.27922e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (-6.76123e+18, -1.0654e+19, -3.46685e+19). using vertex 0
+44607ns 0.0265632 
+19616ns 0.0333834 
+failed to find vertex within 0.0703738 for point (-1.17678e+29, -9.73518e+28, 4.22245e+28). using vertex 0
+failed to find vertex within 0.0703738 for point (1.40678e+19, -4.57089e+18, -3.37984e+19). using vertex 0
+40331ns 0.00939306 
+failed to find vertex within 0.0703738 for point (-3.4517e+14, -2.85549e+14, -3.40928e+14). using vertex 0
+31089ns 0.482259 
+failed to find vertex within 0.0703738 for point (2.45509e+19, 1.54461e+18, -2.74954e+19). using vertex 0
+30158ns 0.0106973 
+20148ns 0.00245068 
+failed to find vertex within 0.0703738 for point (1.58566e+19, 5099.88, -3.33121e+19). using vertex 0
+30891ns 0.0432844 
+18848ns 0.283317 
+25730ns 0.670419 
+26063ns 0.0220861 
+failed to find vertex within 0.0703738 for point (1.09869e+19, -1.99851e+19, -2.90002e+19). using vertex 0
+29773ns 0.0269896 
+20852ns 0.0884473 
+failed to find vertex within 0.0703738 for point (-8.84862e+18, -2.72333e+19, 2.32633e+19). using vertex 0
+30327ns 6.9436e-05 
+failed to find vertex within 0.0703738 for point (2.42525e+09, -1.14124e+09, -8.16105e+09). using vertex 0
+30443ns 0.953804 
+failed to find vertex within 0.0703738 for point (-3.53707e+19, 9.08165e+18, -5.25049e+18). using vertex 0
+28666ns 0.0285931 
+failed to find vertex within 0.0703738 for point (-2.57728e+07, -2.13211e+07, -2.65919e+06). using vertex 0
+30313ns 0.0285216 
+29485ns 0.0188099 
+failed to find vertex within 0.0703738 for point (-2.53087e+07, -1.59229e+06, 2.19735e+07). using vertex 0
+failed to find vertex within 0.0703738 for point (6.99048e+09, 4.43629e+09, -2.28899e+09). using vertex 0
+40660ns 4.32632 
+22776ns 0.0330863 
+failed to find vertex within 0.0703738 for point (8.54087e+27, -1.81503e+28, -1.57182e+29). using vertex 0
+35607ns 0.00024455 
+failed to find vertex within 0.0703738 for point (-1.73622e+18, -9.1016e+18, 3.5711e+19). using vertex 0
+36298ns 0.0355417 
+failed to find vertex within 0.0703738 for point (2.2328e+18, -3.54893e+19, -9.83115e+18). using vertex 0
+34860ns 0.0117462 
+19686ns 0.0209783 
+failed to find vertex within 0.0703738 for point (2.26211e+19, -1.87138e+19, -2.23431e+19). using vertex 0
+30865ns 0.0314151 
+failed to find vertex within 0.0703738 for point (1.45117e+19, 1.05434e+19, -3.22394e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (-2.32774e+19, 2.81376e+19, -5.25049e+18). using vertex 0
+40843ns 0.00828208 
+21082ns 0.0167391 
+failed to find vertex within 0.0703738 for point (-1.75074e+18, -2.78272e+19, -2.41601e+19). using vertex 0
+30680ns 0.324946 
+18671ns 0.716931 
+failed to find vertex within 0.0703738 for point (3.01723e+19, -5.75568e+18, 2.0436e+19). using vertex 0
+32415ns 0.528994 
+19641ns 0.0113645 
+failed to find vertex within 0.0703738 for point (-2.68879e+19, -3.39674e+18, 2.50326e+19). using vertex 0
+33073ns 0.506486 
+failed to find vertex within 0.0703738 for point (1.28757e+24, 2.02888e+24, 2.6799e+23). using vertex 0
+29450ns 0.0242374 
+failed to find vertex within 0.0703738 for point (-4.45679e+18, -3.52791e+19, 9.83115e+18). using vertex 0
+31008ns 0.0460591 
+failed to find vertex within 0.0703738 for point (1.30539e-06, -8.1175e+09, 2.80949e+09). using vertex 0
+failed to find vertex within 0.0703738 for point (-3.50541e+14, 3.73288e+14, -2.33858e+14). using vertex 0
+38733ns 0.401276 
+19838ns 0.0618747 
+23171ns 0.0345914 
+failed to find vertex within 0.0703738 for point (1.22269e+13, 1.30203e+13, -5.62667e+14). using vertex 0
+32288ns 0.0138281 
+failed to find vertex within 0.0703738 for point (-7.63899e+18, -1.38953e+19, 3.33121e+19). using vertex 0
+41814ns 0.0532779 
+20501ns 0.0242322 
+20203ns 0.69341 
+20395ns 0.0077928 
+20361ns 0.0280668 
+20881ns 0.0543278 
+failed to find vertex within 0.0703738 for point (9.14618e+18, -3.5622e+19, 2.92381e+18). using vertex 0
+failed to find vertex within 0.0703738 for point (8.5025e+09, 0.016031, -1.22248e+09). using vertex 0
+39686ns 0.0793491 
+23431ns 0.0238083 
+21118ns 0.606584 
+23383ns 0.0315564 
+19500ns 0.020735 
+failed to find vertex within 0.0703738 for point (4.59549e+18, -3.6377e+19, 4.08921e+18). using vertex 0
+34397ns 0.375139 
+failed to find vertex within 0.0703738 for point (128039, 8055.51, -26844.1). using vertex 0
+46565ns 0.0505857 
+21477ns 0.0059669 
+27073ns 0.0118553 
+failed to find vertex within 0.0703738 for point (2.7873e+09, 7.03992e+09, 4.05678e+09). using vertex 0
+failed to find vertex within 0.0703738 for point (1.60787e+20, 4.94852e+20, -2.7878e+20). using vertex 0
+45471ns 0.000544697 
+failed to find vertex within 0.0703738 for point (-5718.51, 3.55595e+19, 9.83115e+18). using vertex 0
+32984ns 1.16028 
+20841ns 0.697573 
+failed to find vertex within 0.0703738 for point (8.12522e+18, 2.50069e+19, 2.58799e+19). using vertex 0
+35011ns 0.0286434 
+failed to find vertex within 0.0703738 for point (1.23952e+16, -5.83276e+15, -1.43463e+17). using vertex 0
+29967ns 0.0173083 
+failed to find vertex within 0.0703738 for point (1.26788e+29, -2.41862e+28, -9.19137e+28). using vertex 0
+39381ns 0.578918 
+failed to find vertex within 0.0703738 for point (-1.3753e+19, 5.4452e+18, -3.37984e+19). using vertex 0
+30998ns 0.566259 
+failed to find vertex within 0.0703738 for point (1.95928e+19, 3.73753e+18, 3.10368e+19). using vertex 0
+31196ns 0.0317157 
+32394ns 0.032067 
+failed to find vertex within 0.0703738 for point (-1.18717e+19, 2.52286e+19, 2.41601e+19). using vertex 0
+32148ns 0.825929 
+18206ns 0.022574 
+failed to find vertex within 0.0703738 for point (4.86201e+09, -4.02221e+09, 5.82835e+09). using vertex 0
+32248ns 0.0127359 
+20301ns 0.0171642 
+21789ns 0.00235561 
+25204ns 0.00054549 
+21942ns 0.0355473 
+23003ns 0.340364 
+21985ns 0.0196026 
+failed to find vertex within 0.0703738 for point (2.97514e+19, 7.63886e+18, 2.0436e+19). using vertex 0
+29800ns 0.0138467 
+21142ns 0.0132958 
+23370ns 0.633539 
+20852ns 0.601201 
+25675ns 0.0273681 
+22331ns 0.347179 
+21851ns 1.08548 
+22656ns 0.0365744 
+failed to find vertex within 0.0703738 for point (1.12847e+19, 3.47306e+19, 5.25049e+18). using vertex 0
+32749ns 0.0504226 
+failed to find vertex within 0.0703738 for point (4.2461e+14, 2.67142e+13, 3.68654e+14). using vertex 0
+failed to find vertex within 0.0703738 for point (-1.23541e+19, -3.12028e+19, -1.53261e+19). using vertex 0
+38944ns 0.672562 
+failed to find vertex within 0.0703738 for point (-5.54595e+18, 1.0088e+19, -3.50514e+19). using vertex 0
+29531ns 0.540822 
+21469ns 0.0320555 
+23519ns 0.335772 
+22471ns 0.0246438 
+failed to find vertex within 0.0703738 for point (-8.49641e+18, -1.33882e+19, 3.33121e+19). using vertex 0
+28837ns 0.0426611 
+failed to find vertex within 0.0703738 for point (-8.05252e+18, -2.03383e+19, -2.97092e+19). using vertex 0
+31923ns 0.0233428 
+22560ns 0.802006 
+failed to find vertex within 0.0703738 for point (3.04899e+19, 1.93495e+19, 7.55603e+18). using vertex 0
+29198ns 0.384943 
+25258ns 0.0500876 
+21437ns 0.0153453 
+failed to find vertex within 0.0703738 for point (-1.51451e+19, 9.61139e+18, 3.22394e+19). using vertex 0
+31016ns 0.318344 
+failed to find vertex within 0.0703738 for point (2.36444e+18, 1.23948e+19, -3.46685e+19). using vertex 0
+30769ns 0.0299721 
+failed to find vertex within 0.0703738 for point (-3.60402e+19, 2.26746e+18, -7.55603e+18). using vertex 0
+32622ns 0.0675737 
+22307ns 0.0202769 
+failed to find vertex within 0.0703738 for point (4.45679e+18, -3.52791e+19, 9.83115e+18). using vertex 0
+failed to find vertex within 0.0703738 for point (-3.22635e+19, -4.07582e+18, -1.74237e+19). using vertex 0
+37219ns 1.51215 
+failed to find vertex within 0.0703738 for point (-1.12275e+19, -3.45547e+19, -6.40649e+18). using vertex 0
+failed to find vertex within 0.0703738 for point (1.63935e+19, 2.98197e+19, -1.42536e+19). using vertex 0
+40868ns 0.0350723 
+failed to find vertex within 0.0703738 for point (-3.41229e+19, -8.76126e+18, 1.09544e+19). using vertex 0
+37449ns 1.41465 
+failed to find vertex within 0.0703738 for point (-2.58487e+19, -1.87801e+19, -1.84467e+19). using vertex 0
+34081ns 0.498357 
+20512ns 0.0100376 
+26829ns 0.021048 
+18110ns 0.797788 
+failed to find vertex within 0.0703738 for point (1.95928e+19, 3.73753e+18, 3.10368e+19). using vertex 0
+33004ns 0.0311237 
+20192ns 0.0455629 
+18253ns 0.0219439 
+20583ns 0.0327096 
+failed to find vertex within 0.0703738 for point (-2.32911e+19, 2.18718e+19, -1.84467e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (2.77351e+19, 7.12117e+18, 2.32633e+19). using vertex 0
+38659ns 0.0252398 
+failed to find vertex within 0.0703738 for point (2.4313e+19, 1.76644e+19, -2.14003e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (-9.27792e+16, -6.7408e+16, -8.72776e+16). using vertex 0
+40911ns 1.21782 
+failed to find vertex within 0.0703738 for point (-4.39537e+17, 3.4793e+18, 3.67264e+19). using vertex 0
+31962ns 0.444147 
+20668ns 0.0267609 
+failed to find vertex within 0.0703738 for point (2.10709e+19, 2.54703e+19, 1.63832e+19). using vertex 0
+32393ns 0.290242 
+failed to find vertex within 0.0703738 for point (1.77961e+19, -2.24816e+18, -3.22394e+19). using vertex 0
+31772ns 0.101351 
+19642ns 0.933066 
+34200ns 0.00226918 
+failed to find vertex within 0.0703738 for point (-1.09205e+17, 8.64449e+17, 7.55003e+17). using vertex 0
+32422ns 1.21873 
+21513ns 0.0259925 
+failed to find vertex within 0.0703738 for point (-2.30364e+19, 1.08401e+19, 2.67011e+19). using vertex 0
+29074ns 0.0116504 
+failed to find vertex within 0.0703738 for point (-2.22006e+19, 1.40889e+19, -2.58799e+19). using vertex 0
+36052ns 0.0247193 
+failed to find vertex within 0.0703738 for point (5.10819e+18, -2.80825e+18, -3.64301e+19). using vertex 0
+34758ns 0.738174 
+25629ns 0.237377 
+failed to find vertex within 0.0703738 for point (-7.34268e+33, -9.27596e+32, 7.28453e+33). using vertex 0
+28926ns 1.20463 
+21418ns 0.446986 
+failed to find vertex within 0.0703738 for point (5.46993e+20, 8.6942e+21, 3.64893e+21). using vertex 0
+29394ns 2.76224 
+failed to find vertex within 0.0703738 for point (-3.41948e+19, 1.35387e+19, 2.92381e+18). using vertex 0
+47213ns 0.0167359 
+19325ns 0.00243442 
+failed to find vertex within 0.0703738 for point (-4.93329e+08, 3.9051e+09, 7.63504e+09). using vertex 0
+failed to find vertex within 0.0703738 for point (2.20895e+19, -5.67163e+18, 2.90002e+19). using vertex 0
+40191ns 0.902075 
+26965ns 0.0110271 
+25423ns 0.747356 
+failed to find vertex within 0.0703738 for point (-1.45117e+19, -1.05434e+19, 3.22394e+19). using vertex 0
+31170ns 0.0272896 
+29190ns 0.0422433 
+failed to find vertex within 0.0703738 for point (3.39535e+19, -1.34432e+19, 5.25049e+18). using vertex 0
+30894ns 0.0387972 
+failed to find vertex within 0.0703738 for point (4.73517e+34, -2.48226e+35, 2.64642e+36). using vertex 0
+failed to find vertex within 0.0703738 for point (1.57616e-06, 8.58021e+09, 4.08726e+08). using vertex 0
+40056ns 0.0312221 
+36325ns 0.00830523 
+failed to find vertex within 0.0703738 for point (1.3753e+19, 5.4452e+18, 3.37984e+19). using vertex 0
+31376ns 0.0438854 
+33863ns 0.388618 
+failed to find vertex within 0.0703738 for point (2.97536e+19, 2.16172e+19, -2.92381e+18). using vertex 0
+failed to find vertex within 0.0703738 for point (-3.55708e+19, 4.49364e+18, -8.69797e+18). using vertex 0
+39218ns 0.870631 
+28986ns 0.0743811 
+failed to find vertex within 0.0703738 for point (-6.62545e+18, 8.00879e+18, 3.5399e+19). using vertex 0
+30673ns 1.21439 
+21780ns 0.362049 
+25358ns 2.24984 
+failed to find vertex within 0.0703738 for point (-4.40405e+26, 1.13077e+26, 4.19977e+26). using vertex 0
+30106ns 0.826169 
+24460ns 0.00345604 
+failed to find vertex within 0.0703738 for point (1.56803e+19, 1.89542e+19, 2.74954e+19). using vertex 0
+28395ns 0.0080467 
+failed to find vertex within 0.0703738 for point (2.3811e+28, 7.73665e+27, 1.56466e+29). using vertex 0
+40300ns 0.313371 
+failed to find vertex within 0.0703738 for point (2.63091e+19, -1.91147e+19, -1.74237e+19). using vertex 0
+37834ns 0.0140448 
+failed to find vertex within 0.0703738 for point (1.38953e+19, -7.63899e+18, -3.33121e+19). using vertex 0
+40366ns 0.0353029 
+26930ns 0.0354668 
+21519ns 0.057066 
+26876ns 0.703819 
+failed to find vertex within 0.0703738 for point (5.85361e+17, -4.63361e+18, 3.65967e+19). using vertex 0
+35170ns 0.736138 
+20472ns 0.00614106 
+failed to find vertex within 0.0703738 for point (2.31559e+19, -1.91562e+19, -2.14003e+19). using vertex 0
+37114ns 0.00624104 
+29016ns 0.885239 
+failed to find vertex within 0.0703738 for point (3.30424e+19, 1.55486e+19, 5.25049e+18). using vertex 0
+32025ns 0.0427793 
+failed to find vertex within 0.0703738 for point (-2.04194e+18, -3.24557e+19, -1.74237e+19). using vertex 0
+34239ns 1.10625 
+failed to find vertex within 0.0703738 for point (5.0477e+18, 1.2749e+19, 3.42507e+19). using vertex 0
+30487ns 0.0138473 
+failed to find vertex within 0.0703738 for point (-8.76126e+18, -3.41229e+19, -1.09544e+19). using vertex 0
+34310ns 2.4582 
+failed to find vertex within 0.0703738 for point (-1.56118e+19, 1.66249e+19, 2.90002e+19). using vertex 0
+30224ns 0.509844 
+failed to find vertex within 0.0703738 for point (7.30114e+18, 2.84361e+19, 2.23431e+19). using vertex 0
+30074ns 0.0328459 
+failed to find vertex within 0.0703738 for point (-1.87138e+19, 2.26211e+19, 2.23431e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (-3.59457e+32, -1.97613e+32, -2.56354e+33). using vertex 0
+40132ns 0.0155537 
+20641ns 0.0433171 
+20087ns 0.00759443 
+22070ns 0.0286163 
+failed to find vertex within 0.0703738 for point (3.67959e+18, -2.91269e+19, -2.23431e+19). using vertex 0
+33058ns 0.0123929 
+failed to find vertex within 0.0703738 for point (-2.9394e+19, 2.1356e+19, 6.40649e+18). using vertex 0
+33548ns 0.0292498 
+failed to find vertex within 0.0703738 for point (8.63169e+28, -9.19182e+28, -9.59627e+28). using vertex 0
+34351ns 1.64461 
+23635ns 0.411986 
+26443ns 0.000379072 
+failed to find vertex within 0.0703738 for point (1.40793e+24, 1.16474e+24, 1.58333e+24). using vertex 0
+31505ns 1.56767 
+failed to find vertex within 0.0703738 for point (2.41637e+19, -4.60947e+18, -2.74954e+19). using vertex 0
+30950ns 0.573199 
+29305ns 0.590109 
+21987ns 0.674817 
+failed to find vertex within 0.0703738 for point (9.31368e+18, 1.97926e+19, 2.97092e+19). using vertex 0
+33088ns 0.0240329 
+23297ns 0.950592 
+32429ns 0.0456829 
+failed to find vertex within 0.0703738 for point (2.63352e+19, -1.44779e+19, -2.14003e+19). using vertex 0
+30245ns 0.0459044 
+25765ns 0.480852 
+19521ns 0.0448474 
+24051ns 0.0305474 
+20373ns 0.439613 
+failed to find vertex within 0.0703738 for point (-1.22367e+08, -8.89049e+07, -5.15124e+08). using vertex 0
+failed to find vertex within 0.0703738 for point (-2.18974e+09, -1.03041e+09, -8.24198e+09). using vertex 0
+42289ns 0.0359597 
+23861ns 0.881313 
+23908ns 0.31557 
+25192ns 0.755204 
+23801ns 0.0149863 
+failed to find vertex within 0.0703738 for point (2.04223e+14, 9.61e+13, -5.15723e+14). using vertex 0
+34759ns 0.24339 
+22909ns 0.402301 
+failed to find vertex within 0.0703738 for point (-1.84327e+14, 2.22813e+14, 4.83002e+14). using vertex 0
+36682ns 1.09524 
+24836ns 0.419208 
+failed to find vertex within 0.0703738 for point (3.07902e+19, -1.44888e+19, -1.42536e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (7.46139e+17, 9.01927e+17, 3.68749e+19). using vertex 0
+40762ns 0.767507 
+19842ns 0.0101062 
+29342ns 0.00611268 
+21562ns 0.0416649 
+35940ns 0.041298 
+37758ns 0.0312314 
+failed to find vertex within 0.0703738 for point (16620.3, 20090.5, -19843.7). using vertex 0
+36033ns 0.00304139 
+failed to find vertex within 0.0703738 for point (9.3203e+18, 1.28283e+19, -3.33121e+19). using vertex 0
+32956ns 0.563104 
+25554ns 0.0456006 
+failed to find vertex within 0.0703738 for point (-2.46184e+19, 2.03661e+19, 1.84467e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (-4.50755e+16, 9.57903e+16, -9.77835e+16). using vertex 0
+43511ns 0.92487 
+21245ns 0.0317232 
+failed to find vertex within 0.0703738 for point (-1.56666e+19, -2.84974e+19, 1.74237e+19). using vertex 0
+32752ns 0.0190176 
+failed to find vertex within 0.0703738 for point (1.72565e+19, -2.37515e+19, 2.23431e+19). using vertex 0
+30230ns 1.81636 
+19944ns 0.594959 
+failed to find vertex within 0.0703738 for point (-1.02576e+18, 5.63919e+17, -3.68749e+19). using vertex 0
+44449ns 0.00847222 
+failed to find vertex within 0.0703738 for point (-2.48716e+19, 2.64856e+19, -6.40649e+18). using vertex 0
+33559ns 0.962201 
+27501ns 0.180976 
+22362ns 0.459207 
+21114ns 0.0406664 
+19441ns 0.789254 
+failed to find vertex within 0.0703738 for point (-1.72565e+19, -2.37515e+19, 2.23431e+19). using vertex 0
+32514ns 0.022111 
+22024ns 0.15015 
+20690ns 0.191079 
+21887ns 0.0290328 
+20722ns 0.0101373 
+29328ns 0.00807299 
+failed to find vertex within 0.0703738 for point (1.34151e+28, -2.11389e+28, 1.56466e+29). using vertex 0
+failed to find vertex within 0.0703738 for point (4.36967e+18, 3.45895e+19, 1.20667e+19). using vertex 0
+43300ns 0.883006 
+22367ns 0.227748 
+failed to find vertex within 0.0703738 for point (3.39677e+18, 8.72143e+17, 3.67264e+19). using vertex 0
+28988ns 0.835779 
+21682ns 0.0489227 
+failed to find vertex within 0.0703738 for point (-2.74575e+19, 1.7425e+19, -1.74237e+19). using vertex 0
+33445ns 0.72267 
+failed to find vertex within 0.0703738 for point (-1.17209e+19, 1.84692e+19, 2.97092e+19). using vertex 0
+29383ns 0.00976221 
+21189ns 0.0441662 
+failed to find vertex within 0.0703738 for point (1.38699e+29, 7.62505e+28, 7.53966e+27). using vertex 0
+34592ns 0.589568 
+failed to find vertex within 0.0703738 for point (2.50069e+19, -8.12522e+18, 2.58799e+19). using vertex 0
+32363ns 0.456373 
+19864ns 0.0084364 
+failed to find vertex within 0.0703738 for point (4.49149e+18, -3.71569e+18, 3.64301e+19). using vertex 0
+33976ns 0.822739 
+failed to find vertex within 0.0703738 for point (-2.93195e+33, 1.37967e+33, -9.8661e+33). using vertex 0
+32667ns 3.55044 
+failed to find vertex within 0.0703738 for point (-2.00972e+19, 2.14014e+19, -2.23431e+19). using vertex 0
+31900ns 0.0281713 
+failed to find vertex within 0.0703738 for point (-2.97536e+19, -2.16172e+19, 2.92381e+18). using vertex 0
+32788ns 0.62285 
+failed to find vertex within 0.0703738 for point (-9.12988e+18, 1.66072e+19, -3.1654e+19). using vertex 0
+32424ns 0.193696 
+failed to find vertex within 0.0703738 for point (-2.73513e+19, -1.50021e+19, -2.07554e+19). using vertex 0
+30616ns 0.00729521 
+failed to find vertex within 0.0703738 for point (-1.36849e+19, -8.60979e+17, 3.42507e+19). using vertex 0
+32969ns 0.53497 
+19979ns 0.0286606 
+failed to find vertex within 0.0703738 for point (2.5828e+19, -4.92696e+18, -2.58799e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (5.87707e+33, 3.69754e+32, 8.55355e+33). using vertex 0
+43593ns 0.00511157 
+failed to find vertex within 0.0703738 for point (-1.98736e+18, 1.57316e+19, 3.33121e+19). using vertex 0
+29635ns 2.48366 
+19546ns 0.0169642 
+21682ns 1.09783 
+failed to find vertex within 0.0703738 for point (1.11075e+09, 5.82274e+09, 6.21683e+09). using vertex 0
+35784ns 0.00361166 
+22054ns 0.0214487 
+failed to find vertex within 0.0703738 for point (-5.00739e+18, -9.10842e+18, 3.5399e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (-1.23541e+19, 3.12028e+19, -1.53261e+19). using vertex 0
+41616ns 1.44639 
+24922ns 1.07844 
+23055ns 0.035233 
+21726ns 0.601908 
+failed to find vertex within 0.0703738 for point (9.88332e+17, -6.27214e+17, -3.68749e+19). using vertex 0
+34354ns 0.390793 
+failed to find vertex within 0.0703738 for point (-5.88023e+21, 1.50979e+21, -7.23509e+21). using vertex 0
+30566ns 0.745624 
+failed to find vertex within 0.0703738 for point (-1.45297e+19, -2.77169e+18, 3.37984e+19). using vertex 0
+37382ns 0.0024661 
+failed to find vertex within 0.0703738 for point (8.38388e+18, -3.94515e+18, -3.5711e+19). using vertex 0
+32077ns 0.016972 
+failed to find vertex within 0.0703738 for point (4.35521e+18, 6.86272e+18, 3.5987e+19). using vertex 0
+31532ns 0.0322358 
+23588ns 0.0264237 
+failed to find vertex within 0.0703738 for point (2.14014e+19, 2.00972e+19, -2.23431e+19). using vertex 0
+32062ns 0.20628 
+failed to find vertex within 0.0703738 for point (-8.72995e+18, -2.20493e+19, 2.82621e+19). using vertex 0
+35859ns 0.0274904 
+22932ns 0.486173 
+24985ns 0.217714 
+failed to find vertex within 0.0703738 for point (1.34836e+10, -2.45266e+10, -1.99306e+10). using vertex 0
+35236ns 0.496572 
+22573ns 0.0193081 
+failed to find vertex within 0.0703738 for point (-1.86813e+19, -2.9437e+19, 1.20667e+19). using vertex 0
+33604ns 1.75509 
+23686ns 0.0228585 
+failed to find vertex within 0.0703738 for point (1.30408e+19, -4.23722e+18, 3.42507e+19). using vertex 0
+32373ns 0.421076 
+30309ns 0.035182 
+21766ns 0.807633 
+failed to find vertex within 0.0703738 for point (-6.47907e+33, 7.83186e+33, 2.12683e+33). using vertex 0
+failed to find vertex within 0.0703738 for point (-1.17209e+19, -1.84692e+19, -2.97092e+19). using vertex 0
+39837ns 1.8391 
+24022ns 0.0292681 
+failed to find vertex within 0.0703738 for point (-4018.33, -2.18744e+19, 2.97092e+19). using vertex 0
+32156ns 0.0327634 
+failed to find vertex within 0.0703738 for point (2.91479e+19, -1.15405e+19, 1.94512e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (1.05381e+19, 1.91687e+19, -2.97092e+19). using vertex 0
+40165ns 0.0410327 
+failed to find vertex within 0.0703738 for point (-2.65549e+19, 2.19682e+19, 1.31668e+19). using vertex 0
+30629ns 0.0327543 
+35782ns 0.0178492 
+failed to find vertex within 0.0703738 for point (3.01723e+19, 5.75568e+18, 2.0436e+19). using vertex 0
+30267ns 0.0402306 
+21978ns 0.286474 
+27251ns 0.0231532 
+failed to find vertex within 0.0703738 for point (1.35797e+19, 3.42984e+19, 5.85351e+17). using vertex 0
+37272ns 1.90665 
+19473ns 0.0222988 
+failed to find vertex within 0.0703738 for point (-3.03869e+19, 9.87331e+18, 1.84467e+19). using vertex 0
+31172ns 0.787291 
+23093ns 0.447915 
+failed to find vertex within 0.0703738 for point (7.23897e+28, 5.9886e+28, -1.276e+29). using vertex 0
+36225ns 1.37477 
+22638ns 0.0284588 
+failed to find vertex within 0.0703738 for point (8.01299e+17, -8.53297e+17, 3.68749e+19). using vertex 0
+35832ns 0.0335781 
+failed to find vertex within 0.0703738 for point (3.39677e+18, -8.72143e+17, -3.67264e+19). using vertex 0
+34716ns 0.854928 
+failed to find vertex within 0.0703738 for point (-7.68894e+23, -3.04427e+23, -2.27207e+24). using vertex 0
+35012ns 0.711026 
+failed to find vertex within 0.0703738 for point (8.53297e+17, 8.01299e+17, 3.68749e+19). using vertex 0
+40070ns 1.57587 
+failed to find vertex within 0.0703738 for point (-1.36956e+29, 8.61657e+27, -7.92282e+28). using vertex 0
+40684ns 1.50626 
+failed to find vertex within 0.0703738 for point (-1.07832e+36, -1.48418e+36, 1.92402e+36). using vertex 0
+37113ns 1.49568 
+24536ns 0.0144899 
+22903ns 1.56523 
+24417ns 0.0224107 
+failed to find vertex within 0.0703738 for point (-2.45945e+15, 2.30958e+15, -1.60717e+14). using vertex 0
+32165ns 1.94096 
+failed to find vertex within 0.0703738 for point (2.63241e+19, 2.472e+19, 7.55603e+18). using vertex 0
+31858ns 0.020851 
+failed to find vertex within 0.0703738 for point (4.57691e+18, 3.623e+19, 5.25049e+18). using vertex 0
+31001ns 0.32636 
+20514ns 0.726143 
+18478ns 0.0474001 
+failed to find vertex within 0.0703738 for point (-2.12258e+19, 2.92148e+19, 7.55603e+18). using vertex 0
+33866ns 1.09289 
+failed to find vertex within 0.0703738 for point (3.39674e+18, -2.68879e+19, -2.50326e+19). using vertex 0
+30912ns 0.219771 
+failed to find vertex within 0.0703738 for point (-6535, -3075.25, -3869.75). using vertex 0
+31747ns 0.868102 
+failed to find vertex within 0.0703738 for point (-9.93685e+18, -1.36769e+19, 3.27922e+19). using vertex 0
+34205ns 0.0287815 
+failed to find vertex within 0.0703738 for point (-1.60376e+19, 7.1748e+19, 5.84761e+18). using vertex 0
+30155ns 0.674112 
+21164ns 0.0047194 
+failed to find vertex within 0.0703738 for point (5.59461e+28, -4.62826e+28, 1.40842e+29). using vertex 0
+31383ns 0.471146 
+19172ns 0.456371 
+failed to find vertex within 0.0703738 for point (2.33408e+14, -1.09833e+14, -5.0037e+14). using vertex 0
+failed to find vertex within 0.0703738 for point (1.0215e+19, 3.14384e+19, 1.63832e+19). using vertex 0
+40643ns 0.0442418 
+25925ns 0.674689 
+20619ns 0.581017 
+22531ns 0.586054 
+failed to find vertex within 0.0703738 for point (-1.55758e+19, -2.97124e+18, -3.33121e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (8.78282e+33, 3.47736e+33, 4.31392e+33). using vertex 0
+41319ns 1.56595 
+33695ns 0.255455 
+failed to find vertex within 0.0703738 for point (6.66178e+33, 5.5111e+33, 5.75224e+33). using vertex 0
+failed to find vertex within 0.0703738 for point (-1.86813e+19, -2.9437e+19, 1.20667e+19). using vertex 0
+44043ns 1.03231 
+failed to find vertex within 0.0703738 for point (1.27708e+08, -8.1046e+07, 5.15124e+08). using vertex 0
+32319ns 0.0267377 
+failed to find vertex within 0.0703738 for point (-1.97926e+19, 9.31368e+18, -2.97092e+19). using vertex 0
+32032ns 0.450816 
+22155ns 0.0313346 
+33306ns 0.240554 
+21496ns 0.0412154 
+failed to find vertex within 0.0703738 for point (3.11856e+33, 9.59794e+33, -2.44826e+33). using vertex 0
+33897ns 0.825691 
+failed to find vertex within 0.0703738 for point (-6.90532e+18, 3.6199e+19, -1.75546e+18). using vertex 0
+26974ns 0.0523234 
+27313ns 0.0213191 
+19545ns 0.00791623 
+failed to find vertex within 0.0703738 for point (-1.52966e+19, -7.19804e+18, 3.27922e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (-2.06133e+18, 2.83718e+18, -3.67264e+19). using vertex 0
+42332ns 2.50264 
+22602ns 0.611325 
+21542ns 0.0174096 
+29384ns 0.000116132 
+failed to find vertex within 0.0703738 for point (5.36043e+08, 8.52016e+09, 9.52093e+08). using vertex 0
+failed to find vertex within 0.0703738 for point (-2.81376e+19, -2.32774e+19, 5.25049e+18). using vertex 0
+40879ns 0.0271749 
+failed to find vertex within 0.0703738 for point (-6.76123e+18, -1.0654e+19, 3.46685e+19). using vertex 0
+33187ns 0.0132991 
+19549ns 0.00825646 
+25961ns 0.338289 
+25196ns 0.0358869 
+failed to find vertex within 0.0703738 for point (-2.08738e+19, 1.96018e+19, -2.32633e+19). using vertex 0
+31370ns 1.69523 
+failed to find vertex within 0.0703738 for point (3.49457e+18, 2.76624e+19, 2.41601e+19). using vertex 0
+32858ns 0.0268125 
+failed to find vertex within 0.0703738 for point (-6.34283e+18, -6.75442e+18, -3.5711e+19). using vertex 0
+33216ns 1.40222 
+failed to find vertex within 0.0703738 for point (1.57184e+19, -6.22336e+18, 3.27922e+19). using vertex 0
+33700ns 2.71246 
+20258ns 0.0200809 
+failed to find vertex within 0.0703738 for point (1.29621e+19, 7.12597e+18, 3.37984e+19). using vertex 0
+32753ns 0.0517002 
+21575ns 0.0490005 
+failed to find vertex within 0.0703738 for point (2.1702e+19, -2.74159e+18, 2.97092e+19). using vertex 0
+31478ns 0.0300195 
+24006ns 0.0146335 
+failed to find vertex within 0.0703738 for point (2.1356e+19, -2.9394e+19, 6.40649e+18). using vertex 0
+45009ns 0.00220359 
+failed to find vertex within 0.0703738 for point (-1.25447e+33, 9.93018e+33, 2.76722e+33). using vertex 0
+failed to find vertex within 0.0703738 for point (4.29384e+21, -2.72643e+21, -7.91438e+21). using vertex 0
+41612ns 3.58284 
+26149ns 0.00507537 
+23179ns 0.56911 
+25352ns 0.000827671 
+failed to find vertex within 0.0703738 for point (5.08193e+33, -6.99468e+33, 5.75224e+33). using vertex 0
+failed to find vertex within 0.0703738 for point (-2.28705e+33, 7.03881e+33, -7.28453e+33). using vertex 0
+42490ns 7.98574 
+failed to find vertex within 0.0703738 for point (2.9394e+19, 2.1356e+19, -6.40649e+18). using vertex 0
+33418ns 0.725097 
+failed to find vertex within 0.0703738 for point (-1.90867e+19, 2.03253e+19, -2.41601e+19). using vertex 0
+29761ns 0.407348 
+20767ns 0.040739 
+21517ns 0.029936 
+failed to find vertex within 0.0703738 for point (3.03869e+19, -9.87331e+18, -1.84467e+19). using vertex 0
+32590ns 0.0674271 
+failed to find vertex within 0.0703738 for point (4.00448e+18, 3.16988e+19, -1.84467e+19). using vertex 0
+37772ns 0.0229899 
+failed to find vertex within 0.0703738 for point (1.69443e+28, 3.60085e+28, -1.53378e+29). using vertex 0
+32814ns 0.0227724 
+17980ns 0.306434 
+30882ns 0.234838 
+failed to find vertex within 0.0703738 for point (1.08076e+19, -2.72968e+19, -2.23431e+19). using vertex 0
+31704ns 0.00730845 
+23115ns 0.491562 
+19924ns 0.0383935 
+23177ns 0.0516776 
+failed to find vertex within 0.0703738 for point (-1.15713e+18, -1.49177e+18, 0). using vertex 0
+28992ns 0.046208 
+23046ns 0.0566886 
+23614ns 0.57881 
+failed to find vertex within 0.0703738 for point (-2.07559e+19, -2.62207e+18, -3.03883e+19). using vertex 0
+30904ns 0.027064 
+failed to find vertex within 0.0703738 for point (2.44558e+19, 1.66202e+19, -6.75969e+19). using vertex 0
+34288ns 0.758092 
+failed to find vertex within 0.0703738 for point (2.43422e+19, -2.59218e+19, -9.83115e+18). using vertex 0
+failed to find vertex within 0.0703738 for point (1.36418e+19, 2.14961e+19, 2.67011e+19). using vertex 0
+40500ns 0.317953 
+failed to find vertex within 0.0703738 for point (-1.34324e+19, 2.44334e+19, -2.41601e+19). using vertex 0
+32711ns 0.0551979 
+failed to find vertex within 0.0703738 for point (3.0677e+19, 1.94682e+19, 6.40649e+18). using vertex 0
+33506ns 0.689048 
+31278ns 0.00257258 
+29866ns 0.0153588 
+21082ns 0.0421963 
+21390ns 0.849149 
+failed to find vertex within 0.0703738 for point (8.01299e+17, -8.53297e+17, -3.68749e+19). using vertex 0
+32358ns 1.7106 
+20795ns 0.971452 
+failed to find vertex within 0.0703738 for point (1.70574e+18, 1.60179e+18, -3.68192e+19). using vertex 0
+32266ns 0.497243 
+failed to find vertex within 0.0703738 for point (-2.74521e+18, -3.77846e+18, 3.65967e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (-5.9062e+18, -7.13936e+18, 3.5711e+19). using vertex 0
+44518ns 0.303865 
+failed to find vertex within 0.0703738 for point (-1.06151e+18, 1.68722e+19, 3.27922e+19). using vertex 0
+34429ns 0.521598 
+31587ns 0.256621 
+failed to find vertex within 0.0703738 for point (-9.4286e+18, -1.13972e+19, -3.37984e+19). using vertex 0
+31488ns 0.00099365 
+failed to find vertex within 0.0703738 for point (-5.39886e+16, -4.46632e+16, -1.25935e+17). using vertex 0
+36069ns 0.220784 
+failed to find vertex within 0.0703738 for point (1.01256e+19, 1.07827e+19, -3.37984e+19). using vertex 0
+32092ns 0.0180451 
+25937ns 0.0195914 
+29632ns 0.0384654 
+23945ns 0.0349514 
+failed to find vertex within 0.0703738 for point (2.33644e+28, -9.09984e+28, -1.276e+29). using vertex 0
+31253ns 0.0204905 
+failed to find vertex within 0.0703738 for point (-1.14773e+12, 7.28374e+11, -1.72855e+12). using vertex 0
+35939ns 0.0216144 
+failed to find vertex within 0.0703738 for point (-6.30245e+28, 1.33934e+29, 5.65509e+28). using vertex 0
+36157ns 0.541201 
+23331ns 0.0157128 
+25449ns 0.0243464 
+failed to find vertex within 0.0703738 for point (-9.60095e+32, -2.42492e+33, 1.00518e+34). using vertex 0
+34263ns 1.55749 
+23388ns 1.0488 
+failed to find vertex within 0.0703738 for point (7.262e+21, -6.00467e+21, 1.05209e+21). using vertex 0
+31118ns 0.055686 
+22000ns 0.0420776 
+21334ns 0.163508 
+28443ns 0.00816105 
+27343ns 0.00134498 
+failed to find vertex within 0.0703738 for point (-1.51405e+19, -3.21752e+19, -9.83115e+18). using vertex 0
+29363ns 1.11503 
+21134ns 0.16822 
+26676ns 0.0276174 
+20307ns 0.0405435 
+20778ns 0.0266432 
+18294ns 0.00181345 
+failed to find vertex within 0.0703738 for point (-1.52304e+18, -7.98405e+18, -3.5987e+19). using vertex 0
+35070ns 0.50666 
+failed to find vertex within 0.0703738 for point (-2.52286e+19, -1.18717e+19, 2.41601e+19). using vertex 0
+41636ns 1.23545 
+failed to find vertex within 0.0703738 for point (0.0413055, 0.016354, -3.68935e+19). using vertex 0
+32758ns 0.0239224 
+failed to find vertex within 0.0703738 for point (1.6656e+24, 1.5641e+24, -7.90802e+23). using vertex 0
+33070ns 0.0250064 
+20831ns 0.0775961 
+22354ns 0.0282971 
+failed to find vertex within 0.0703738 for point (4.99482e+21, -6.8713e+21, -4.21151e+21). using vertex 0
+37964ns 1.71126 
+22673ns 0.0061128 
+failed to find vertex within 0.0703738 for point (3.14384e+19, 1.0215e+19, -1.63832e+19). using vertex 0
+32334ns 0.00607835 
+32551ns 0.0417051 
+20559ns 0.0470066 
+21882ns 0.00210273 
+20029ns 0.0497374 
+failed to find vertex within 0.0703738 for point (-3.21195e+18, -9.88537e+18, -3.5399e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (-2.63091e+19, -1.91147e+19, -1.74237e+19). using vertex 0
+42147ns 0.0041423 
+failed to find vertex within 0.0703738 for point (2.11872e+19, 5.43995e+18, 2.97092e+19). using vertex 0
+29920ns 0.995491 
+19778ns 0.0306142 
+failed to find vertex within 0.0703738 for point (3.44397e+09, 1.10766e-06, 7.86931e+09). using vertex 0
+33570ns 0.0199165 
+32128ns 0.015713 
+22160ns 0.0190488 
+failed to find vertex within 0.0703738 for point (-4.56941e+33, -4.86593e+33, 7.95506e+33). using vertex 0
+33658ns 0.0148083 
+21645ns 0.0264062 
+failed to find vertex within 0.0703738 for point (-1.30563e+19, 2.37494e+19, -2.50326e+19). using vertex 0
+30418ns 0.0262889 
+failed to find vertex within 0.0703738 for point (-4.34246e+18, -1.7193e+18, 3.65967e+19). using vertex 0
+32074ns 0.42102 
+failed to find vertex within 0.0703738 for point (-2.68908e+19, 2.52522e+19, -5.85351e+17). using vertex 0
+32839ns 0.00342391 
+failed to find vertex within 0.0703738 for point (2.03661e+19, 2.46184e+19, -1.84467e+19). using vertex 0
+31414ns 0.299218 
+28873ns 0.589109 
+failed to find vertex within 0.0703738 for point (-2.63091e+19, 1.91147e+19, -1.74237e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (4.83967e+11, 2.66063e+11, -2.12854e+12). using vertex 0
+42075ns 0.00956843 
+24346ns 0.635486 
+21380ns 0.0466522 
+failed to find vertex within 0.0703738 for point (2549.94, -1.58566e+19, 3.33121e+19). using vertex 0
+33441ns 0.0237663 
+failed to find vertex within 0.0703738 for point (-2.41551e+19, -1.99828e+19, -1.94512e+19). using vertex 0
+32953ns 0.679281 
+17739ns 0.00531126 
+19847ns 0.00873534 
+22342ns 0.881941 
+30965ns 0.00473877 
+30570ns 0.000337897 
+22084ns 0.335911 
+failed to find vertex within 0.0703738 for point (1.38211e+19, 1.14338e+19, 3.22394e+19). using vertex 0
+39605ns 0.011913 
+22818ns 0.647245 
+22649ns 0.0163621 
+26964ns 0.753549 
+24488ns 0.764664 
+failed to find vertex within 0.0703738 for point (2.2806e+19, 0, 2.90002e+19). using vertex 0
+33343ns 0.00113765 
+failed to find vertex within 0.0703738 for point (-1.12275e+19, -3.45547e+19, -6.40649e+18). using vertex 0
+31872ns 0.02384 
+21078ns 0.0213036 
+failed to find vertex within 0.0703738 for point (6.49183e+18, -2.5703e+18, 3.62268e+19). using vertex 0
+36626ns 0.0196425 
+32179ns 0.832916 
+failed to find vertex within 0.0703738 for point (-2.93584e+19, 0, 2.23431e+19). using vertex 0
+32116ns 0.167924 
+19279ns 0.829176 
+27716ns 0.0859738 
+failed to find vertex within 0.0703738 for point (1.49401e+19, 2.35418e+19, -2.41601e+19). using vertex 0
+37652ns 0.194079 
+failed to find vertex within 0.0703738 for point (-2.88518e+17, -1.82163e+18, 0). using vertex 0
+30800ns 0.989327 
+34647ns 0.000316036 
+failed to find vertex within 0.0703738 for point (-2.76624e+19, 3.49457e+18, -2.41601e+19). using vertex 0
+31734ns 0.496409 
+failed to find vertex within 0.0703738 for point (2.90989e+19, 1.84667e+19, -1.31668e+19). using vertex 0
+35672ns 0.372439 
+failed to find vertex within 0.0703738 for point (-4.36743e+16, -1.41906e+16, -2.8493e+16). using vertex 0
+28521ns 0.0256695 
+failed to find vertex within 0.0703738 for point (-5.47566e+28, 2.16797e+28, 1.47106e+29). using vertex 0
+failed to find vertex within 0.0703738 for point (-1.3469e+19, 2.56936e+18, 3.42507e+19). using vertex 0
+43239ns 0.814188 
+19410ns 0.0451804 
+19357ns 0.830287 
+failed to find vertex within 0.0703738 for point (1.12675e+23, 2.84583e+23, 2.39836e+24). using vertex 0
+28660ns 1.67363 
+22416ns 0.0235001 
+21826ns 0.0128246 
+failed to find vertex within 0.0703738 for point (1.10631e+19, -2.79422e+19, 2.14003e+19). using vertex 0
+33201ns 0.0264328 
+failed to find vertex within 0.0703738 for point (-7.48162e+17, -9.04711e+17, -5.57035e+16). using vertex 0
+29345ns 0.00744769 
+failed to find vertex within 0.0703738 for point (-6.67357e+16, -1.30976e+17, 0). using vertex 0
+36144ns 1.47995 
+23443ns 0.0246026 
+31712ns 0.0304988 
+failed to find vertex within 0.0703738 for point (-4.5975e+09, -7.24451e+09, 4.08726e+08). using vertex 0
+31972ns 1.06483 
+failed to find vertex within 0.0703738 for point (-2.87641e+09, 7.26498e+09, -3.56839e+09). using vertex 0
+31357ns 1.67347 
+31162ns 0.057664 
+22378ns 0.0185077 
+33928ns 0.127149 
+22332ns 0.0481399 
+20291ns 0.0509727 
+failed to find vertex within 0.0703738 for point (-1.10793e+19, -3.40987e+19, 8.69797e+18). using vertex 0
+30186ns 0.0176763 
+failed to find vertex within 0.0703738 for point (-3.55595e+19, 0.108585, 9.83115e+18). using vertex 0
+36444ns 0.0663311 
+24749ns 0.404283 
+18951ns 0.617499 
+21506ns 0.999982 
+failed to find vertex within 0.0703738 for point (-2.29848e+18, -4.38459e+17, -3.68192e+19). using vertex 0
+29217ns 0.0174422 
+25093ns 0.0202087 
+failed to find vertex within 0.0703738 for point (-4.83251e+21, -7.61482e+21, -2.80433e+21). using vertex 0
+35595ns 0.0591136 
+26150ns 0.0615465 
+failed to find vertex within 0.0703738 for point (-3.24161e+19, 1.28344e+19, 1.20667e+19). using vertex 0
+44733ns 0.0221732 
+25054ns 0.0481186 
+failed to find vertex within 0.0703738 for point (7.22845e+17, -1.14893e+19, 3.50514e+19). using vertex 0
+31209ns 0.0266736 
+19173ns 0.589639 
+failed to find vertex within 0.0703738 for point (-1.5925e+19, 2.89675e+19, 1.63832e+19). using vertex 0
+29653ns 0.00799091 
+26267ns 0.489608 
+failed to find vertex within 0.0703738 for point (8.84329e+18, -3.44423e+19, -9.83115e+18). using vertex 0
+31148ns 0.446031 
+28738ns 0.0212039 
+failed to find vertex within 0.0703738 for point (8.60979e+17, 1.36849e+19, -3.42507e+19). using vertex 0
+37025ns 0.024361 
+failed to find vertex within 0.0703738 for point (2.5727e+19, -1.41435e+19, 2.23431e+19). using vertex 0
+31892ns 0.0307817 
+failed to find vertex within 0.0703738 for point (-3.77846e+18, 2.74521e+18, -3.65967e+19). using vertex 0
+30318ns 0.00113164 
+25074ns 0.0109911 
+failed to find vertex within 0.0703738 for point (-5.7026e+33, 4.7176e+33, -7.28453e+33). using vertex 0
+34975ns 1.53274 
+20635ns 0.00199667 
+25891ns 0.0325317 
+21764ns 0.271499 
+failed to find vertex within 0.0703738 for point (-2.25e+18, 4.09274e+18, 3.65967e+19). using vertex 0
+34373ns 0.276498 
+19728ns 0.0511515 
+27212ns 0.105186 
+19858ns 0.0801731 
+failed to find vertex within 0.0703738 for point (2.28234e+26, 2.88326e+25, 5.74632e+26). using vertex 0
+32507ns 1.32492 
+20618ns 0.045791 
+failed to find vertex within 0.0703738 for point (-1.56712e+29, 1.97974e+28, 1.25577e+28). using vertex 0
+31196ns 0.389003 
+failed to find vertex within 0.0703738 for point (8.05252e+18, -2.03383e+19, -2.97092e+19). using vertex 0
+32281ns 0.984106 
+failed to find vertex within 0.0703738 for point (1.93495e+19, 3.04899e+19, 7.55603e+18). using vertex 0
+30736ns 0.025606 
+failed to find vertex within 0.0703738 for point (-1.54471e+19, 3.27419e+19, -2.89638e+18). using vertex 0
+30194ns 0.230731 
+23629ns 0.00743501 
+failed to find vertex within 0.0703738 for point (-9.12988e+18, 1.66072e+19, -3.1654e+19). using vertex 0
+30957ns 0.330257 
+failed to find vertex within 0.0703738 for point (-6.33212e+28, -2.50707e+28, 1.43074e+29). using vertex 0
+failed to find vertex within 0.0703738 for point (8.97463e+18, 2.30429e+18, 3.5711e+19). using vertex 0
+41151ns 0.0262192 
+failed to find vertex within 0.0703738 for point (1.30832e+18, -6.85847e+18, -3.62268e+19). using vertex 0
+31877ns 0.533249 
+failed to find vertex within 0.0703738 for point (5932.18, -3.68888e+19, -5.85351e+17). using vertex 0
+29939ns 0.0153129 
+30834ns 0.0277508 
+failed to find vertex within 0.0703738 for point (2.52587e+19, -3.19091e+18, 2.67011e+19). using vertex 0
+43245ns 0.181826 
+20326ns 0.000780683 
+21018ns 0.676584 
+failed to find vertex within 0.0703738 for point (-1.64587e+19, -2.59347e+19, 2.0436e+19). using vertex 0
+27183ns 0.0255767 
+failed to find vertex within 0.0703738 for point (-2.20895e+19, -5.67163e+18, -2.90002e+19). using vertex 0
+30577ns 0.0074962 
+failed to find vertex within 0.0703738 for point (-6.85847e+18, 1.30832e+18, -3.62268e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (7.79626e+18, -3.03644e+19, 1.94512e+19). using vertex 0
+42711ns 0.296672 
+20438ns 0.0373018 
+failed to find vertex within 0.0703738 for point (5041.36, -3.13493e+19, 1.94512e+19). using vertex 0
+32243ns 0.596439 
+failed to find vertex within 0.0703738 for point (-6.90532e+18, 3.6199e+19, -1.75546e+18). using vertex 0
+30165ns 0.000414966 
+failed to find vertex within 0.0703738 for point (1.13972e+19, -9.4286e+18, 3.37984e+19). using vertex 0
+31583ns 0.0540087 
+21889ns 0.0222367 
+21092ns 0.853374 
+24474ns 0.119757 
+failed to find vertex within 0.0703738 for point (4.62685e+16, 2.51874e+32, 2.04626e+32). using vertex 0
+32815ns 0.0329569 
+21826ns 0.617558 
+failed to find vertex within 0.0703738 for point (1.0776e+19, -1.3026e+19, 3.27922e+19). using vertex 0
+32516ns 0.504989 
+21587ns 0.217959 
+20822ns 0.403389 
+failed to find vertex within 0.0703738 for point (3.82894e+19, -1.11241e+19, 6.20736e+19). using vertex 0
+31287ns 0.00143803 
+31671ns 0.034041 
+20827ns 0.0234388 
+25292ns 1.20813 
+19532ns 0.697258 
+20678ns 0.486211 
+21542ns 0.0127532 
+21766ns 0.486422 
+failed to find vertex within 0.0703738 for point (6.47794e+34, -1.02964e+36, 8.38148e+35). using vertex 0
+failed to find vertex within 0.0703738 for point (1.08546e+19, -1.1559e+19, -3.33121e+19). using vertex 0
+42450ns 1.24447 
+failed to find vertex within 0.0703738 for point (-2.41637e+19, -4.60947e+18, -2.74954e+19). using vertex 0
+31877ns 0.47466 
+23864ns 0.0174848 
+failed to find vertex within 0.0703738 for point (1.56591e+19, 3.32772e+19, 2.92381e+18). using vertex 0
+41837ns 0.820786 
+failed to find vertex within 0.0703738 for point (9.44419e+16, 5.99346e+16, -9.08722e+16). using vertex 0
+30643ns 0.517808 
+failed to find vertex within 0.0703738 for point (-3.56939e+19, -9.16465e+18, 1.75546e+18). using vertex 0
+28382ns 3.27885 
+failed to find vertex within 0.0703738 for point (1.97375e+28, -1.56238e+29, 1.7563e+28). using vertex 0
+33791ns 0.811792 
+failed to find vertex within 0.0703738 for point (-1.72889e+14, -5.32098e+14, -6.23964e+13). using vertex 0
+failed to find vertex within 0.0703738 for point (-2.33955e+19, -7.60164e+18, -2.74954e+19). using vertex 0
+40023ns 1.3215 
+19988ns 0.230476 
+20332ns 0.420762 
+failed to find vertex within 0.0703738 for point (-1.57169e+29, 9.88825e+27, 1.7563e+28). using vertex 0
+27334ns 0.732629 
+failed to find vertex within 0.0703738 for point (-3.40987e+19, 1.10793e+19, -8.69797e+18). using vertex 0
+40159ns 0.0148443 
+20993ns 0.0534889 
+failed to find vertex within 0.0703738 for point (-1.49401e+19, -2.35418e+19, -2.41601e+19). using vertex 0
+28806ns 0.0333895 
+18680ns 0.0184706 
+25601ns 0.908825 
+29025ns 0.534894 
+failed to find vertex within 0.0703738 for point (6.46489e+18, 1.98969e+19, 3.03883e+19). using vertex 0
+31753ns 0.581168 
+19828ns 0.0282622 
+failed to find vertex within 0.0703738 for point (-1.13649e+19, 3.49774e+19, -2.92381e+18). using vertex 0
+29884ns 0.0314084 
+failed to find vertex within 0.0703738 for point (-8.41868e+16, -1.15873e+17, -1.59735e+16). using vertex 0
+30553ns 1.29718 
+failed to find vertex within 0.0703738 for point (6.60577e+18, -1.20159e+19, 3.42507e+19). using vertex 0
+32174ns 0.421564 
+19751ns 0.460716 
+20286ns 0.0335541 
+21655ns 0.0521157 
+28598ns 0.51205 
+21579ns 0.0127818 
+failed to find vertex within 0.0703738 for point (2.44473e+19, -9.67938e+18, 2.58799e+19). using vertex 0
+32037ns 0.364417 
+19167ns 0.0321461 
+20123ns 0.0373119 
+20512ns 0.0666667 
+failed to find vertex within 0.0703738 for point (-3.76427e+09, 6.84718e+09, -3.56839e+09). using vertex 0
+36472ns 0.538438 
+22407ns 0.759098 
+21938ns 0.356447 
+failed to find vertex within 0.0703738 for point (-45575.3, 33112.4, -118349). using vertex 0
+30953ns 0.00684397 
+failed to find vertex within 0.0703738 for point (-3.52791e+19, 4.45679e+18, -9.83115e+18). using vertex 0
+29065ns 0.0166879 
+19642ns 0.0153566 
+failed to find vertex within 0.0703738 for point (-6.85555e+36, -0.0575446, -1.44023e+37). using vertex 0
+30423ns 0.00255531 
+32567ns 0.037349 
+27557ns 0.12781 
+19664ns 0.0193121 
+failed to find vertex within 0.0703738 for point (3.42468e+19, -6.53293e+18, 1.20667e+19). using vertex 0
+45184ns 0.00487243 
+23657ns 0.0114615 
+24485ns 0.463159 
+failed to find vertex within 0.0703738 for point (-1.30903e+19, -3.30624e+19, -9.83115e+18). using vertex 0
+failed to find vertex within 0.0703738 for point (3.21308e+19, 1.76641e+19, 4.08921e+18). using vertex 0
+41867ns 0.391974 
+failed to find vertex within 0.0703738 for point (-4.94437e+28, 0.0429512, -1.50545e+29). using vertex 0
+failed to find vertex within 0.0703738 for point (1.06997e+09, -8.46969e+09, 9.52093e+08). using vertex 0
+43765ns 1.13208 
+failed to find vertex within 0.0703738 for point (-3.0036e+13, -4.77409e+14, 2.96802e+14). using vertex 0
+31630ns 0.836083 
+33134ns 0.00398034 
+31404ns 0.0269606 
+20030ns 0.00594568 
+failed to find vertex within 0.0703738 for point (1.60454e+14, -4.93826e+14, -2.17493e+14). using vertex 0
+34352ns 1.07964 
+failed to find vertex within 0.0703738 for point (-1.36039e+19, -2.89099e+19, -1.84467e+19). using vertex 0
+30068ns 0.559585 
+failed to find vertex within 0.0703738 for point (82698.2, 99965.2, -18653.5). using vertex 0
+28712ns 0.0183825 
+failed to find vertex within 0.0703738 for point (1.27591e+29, 5.05167e+28, 7.92282e+28). using vertex 0
+27686ns 1.50947 
+27277ns 0.00687762 
+failed to find vertex within 0.0703738 for point (-2.1702e+19, 2.74159e+18, -2.97092e+19). using vertex 0
+27890ns 1.38043 
+21996ns 0.701568 
+19943ns 0.0131287 
+23629ns 0.46578 
+20310ns 0.00666759 
+failed to find vertex within 0.0703738 for point (-1.42224e+24, 1.79672e+23, -1.94699e+24). using vertex 0
+31648ns 0.406471 
+30375ns 0.00457368 
+35810ns 0.0373867 
+20460ns 0.0151702 
+failed to find vertex within 0.0703738 for point (6.76219e+18, 2.31511e+19, -6.972e+19). using vertex 0
+31033ns 0.954044 
+failed to find vertex within 0.0703738 for point (1.93495e+19, 3.04899e+19, 7.55603e+18). using vertex 0
+29086ns 1.62349 
+20768ns 0.128511 
+failed to find vertex within 0.0703738 for point (-3.89595e+19, -5.73048e+19, 2.52335e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (2.34902e+19, -2.83947e+19, -1.75546e+18). using vertex 0
+39511ns 0.0569004 
+failed to find vertex within 0.0703738 for point (-1.89542e+19, 1.56803e+19, -2.74954e+19). using vertex 0
+28917ns 0.023034 
+22496ns 0.416818 
+21058ns 0.356763 
+18277ns 0.386543 
+32114ns 0.0942335 
+25219ns 0.0444891 
+24153ns 0.560516 
+failed to find vertex within 0.0703738 for point (3455.92, -2193.19, 194.923). using vertex 0
+30976ns 0.885832 
+failed to find vertex within 0.0703738 for point (-3.21752e+19, -1.51405e+19, 9.83115e+18). using vertex 0
+30700ns 0.019306 
+failed to find vertex within 0.0703738 for point (-2.79104e+19, -1.77125e+19, 1.63832e+19). using vertex 0
+30221ns 0.0682669 
+20186ns 0.0690213 
+failed to find vertex within 0.0703738 for point (-3.24708e+19, -6.19414e+18, -1.63832e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (-8.81223e+18, -2.86327e+18, 3.5711e+19). using vertex 0
+40513ns 0.0137057 
+failed to find vertex within 0.0703738 for point (1.01256e+19, 1.07827e+19, 3.37984e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (-5.10819e+18, -2.80825e+18, 3.64301e+19). using vertex 0
+41242ns 0.021011 
+failed to find vertex within 0.0703738 for point (-1.3469e+19, 2.56936e+18, 3.42507e+19). using vertex 0
+32268ns 0.00740557 
+failed to find vertex within 0.0703738 for point (-6.49183e+18, -2.5703e+18, -3.62268e+19). using vertex 0
+32128ns 0.0167112 
+27133ns 0.4231 
+failed to find vertex within 0.0703738 for point (-2.41637e+19, 4.60947e+18, 2.74954e+19). using vertex 0
+31717ns 0.239399 
+failed to find vertex within 0.0703738 for point (-3.67049e+19, 2.30928e+18, -2.92381e+18). using vertex 0
+29213ns 0.0299327 
+failed to find vertex within 0.0703738 for point (1.50001e+19, -3.18768e+19, 1.09544e+19). using vertex 0
+27439ns 0.019762 
+failed to find vertex within 0.0703738 for point (6.92459e+17, -2.13117e+18, -5.43623e+17). using vertex 0
+31399ns 1.26402 
+failed to find vertex within 0.0703738 for point (3.92125e+28, 7.13274e+28, 1.35953e+29). using vertex 0
+34388ns 0.609184 
+failed to find vertex within 0.0703738 for point (-3.04783e+09, -7.69794e+09, 2.28899e+09). using vertex 0
+31836ns 0.0268827 
+failed to find vertex within 0.0703738 for point (-5.98696e+18, 3.13848e+19, 1.84467e+19). using vertex 0
+30819ns 0.0543396 
+33303ns 0.0220851 
+failed to find vertex within 0.0703738 for point (5.925e+18, -5.56394e+18, 3.59865e+19). using vertex 0
+36109ns 0.0310511 
+failed to find vertex within 0.0703738 for point (1.38953e+19, 7.63899e+18, 3.33121e+19). using vertex 0
+32846ns 0.13401 
+failed to find vertex within 0.0703738 for point (6.52651e+17, 1.03736e+19, -3.5399e+19). using vertex 0
+34160ns 0.179905 
+failed to find vertex within 0.0703738 for point (-1.14334e+29, 1.07367e+29, -2.25507e+28). using vertex 0
+32250ns 0.881637 
+20077ns 0.0385817 
+21455ns 0.985256 
+failed to find vertex within 0.0703738 for point (3.24557e+19, -2.04194e+18, -1.74237e+19). using vertex 0
+33719ns 0.193575 
+23523ns 0.347977 
+failed to find vertex within 0.0703738 for point (2.74521e+18, -3.77846e+18, 3.65967e+19). using vertex 0
+32289ns 0.0374532 
+19918ns 0.00751603 
+22368ns 0.0176651 
+27873ns 0.584919 
+failed to find vertex within 0.0703738 for point (-9.67938e+18, -2.44473e+19, -2.58799e+19). using vertex 0
+31644ns 0.460513 
+22172ns 0.0541787 
+19076ns 0.0430216 
+failed to find vertex within 0.0703738 for point (-1.3469e+19, 2.56936e+18, -3.42507e+19). using vertex 0
+30334ns 0.0163586 
+failed to find vertex within 0.0703738 for point (-1.59861e+18, 1.61217e+24, 1.80197e+24). using vertex 0
+31665ns 0.960539 
+22233ns 0.026562 
+20479ns 0.698966 
+failed to find vertex within 0.0703738 for point (-1.51405e+19, -3.21752e+19, -9.83115e+18). using vertex 0
+32045ns 0.257723 
+19207ns 0.0378107 
+21616ns 0.684319 
+failed to find vertex within 0.0703738 for point (4.77062e+18, -2.50085e+19, -2.67011e+19). using vertex 0
+29151ns 0.0196587 
+35960ns 0.0045422 
+21207ns 0.0179973 
+failed to find vertex within 0.0703738 for point (8.22078e+18, 3.20178e+19, -1.63832e+19). using vertex 0
+32908ns 0.0101545 
+21383ns 0.0355805 
+21445ns 0.453233 
+22030ns 0.040341 
+failed to find vertex within 0.0703738 for point (-7.13936e+18, 5.9062e+18, -3.5711e+19). using vertex 0
+33547ns 0.0196164 
+23619ns 1.38318 
+21162ns 0.034483 
+failed to find vertex within 0.0703738 for point (9.26682e+27, 2.85203e+28, 1.55593e+29). using vertex 0
+38256ns 1.70035 
+failed to find vertex within 0.0703738 for point (1.47625e+19, 9.2878e+17, -3.37984e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (-2.46184e+19, 2.03661e+19, 1.84467e+19). using vertex 0
+42291ns 0.0480137 
+27194ns 0.0299683 
+29070ns 0.463855 
+27819ns 0.427805 
+failed to find vertex within 0.0703738 for point (1.10297e+13, -1.75313e+14, -5.34842e+14). using vertex 0
+30069ns 1.89339 
+failed to find vertex within 0.0703738 for point (2.49991e+18, -1.97888e+19, -3.10368e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (4.07582e+18, -3.22635e+19, 1.74237e+19). using vertex 0
+44078ns 0.915947 
+19676ns 0.571837 
+25233ns 0.0363325 
+failed to find vertex within 0.0703738 for point (1.55443e+13, 1.23046e+14, 5.49118e+14). using vertex 0
+32098ns 0.000308371 
+19337ns 0.0355989 
+21747ns 0.00646976 
+failed to find vertex within 0.0703738 for point (1.99068e+19, -1.25243e+18, 3.10368e+19). using vertex 0
+32964ns 2.28785 
+19742ns 0.292613 
+failed to find vertex within 0.0703738 for point (-3.36367e+18, 6.11849e+18, 3.62268e+19). using vertex 0
+33037ns 0.00335692 
+failed to find vertex within 0.0703738 for point (-3.18388e+19, 1.75036e+19, 6.40649e+18). using vertex 0
+30926ns 2.81545 
+failed to find vertex within 0.0703738 for point (5.71958e+26, -2.26454e+26, -6.86055e+25). using vertex 0
+29162ns 0.635913 
+23893ns 0.759904 
+20355ns 0.520615 
+failed to find vertex within 0.0703738 for point (-1.1613e+18, -9.19266e+18, -3.5711e+19). using vertex 0
+33097ns 0.0342947 
+34228ns 0.0257511 
+failed to find vertex within 0.0703738 for point (3.49769e+19, -8.98055e+18, 7.55603e+18). using vertex 0
+28085ns 0.0391552 
+failed to find vertex within 0.0703738 for point (1.62284e+19, -1.96168e+19, -2.67011e+19). using vertex 0
+29747ns 0.912474 
+19880ns 0.205302 
+failed to find vertex within 0.0703738 for point (-8.08737e+18, -3.14982e+19, -1.74237e+19). using vertex 0
+32866ns 0.560732 
+failed to find vertex within 0.0703738 for point (-2.83718e+18, -2.06133e+18, 3.67264e+19). using vertex 0
+32019ns 0.0165497 
+20527ns 0.0125975 
+20814ns 0.0447083 
+27332ns 0.0182837 
+failed to find vertex within 0.0703738 for point (-3.53707e+19, 9.08165e+18, 5.25049e+18). using vertex 0
+31137ns 0.0294217 
+21564ns 0.011739 
+failed to find vertex within 0.0703738 for point (-1.90855e+28, -1.0005e+29, 1.21385e+29). using vertex 0
+31817ns 0.717699 
+28919ns 0.000839179 
+failed to find vertex within 0.0703738 for point (1.72726e+19, 3.14187e+19, -8.69797e+18). using vertex 0
+31240ns 0.00712006 
+18156ns 0.046576 
+23248ns 0.019223 
+24247ns 0.0479452 
+20053ns 0.039224 
+failed to find vertex within 0.0703738 for point (1.44284e+18, 1.14212e+19, -3.50514e+19). using vertex 0
+30300ns 0.0120459 
+failed to find vertex within 0.0703738 for point (-1.99224e+14, -3.62386e+14, -3.81967e+14). using vertex 0
+37691ns 1.69408 
+20836ns 0.0236082 
+failed to find vertex within 0.0703738 for point (-3.09583e+19, -1.96467e+19, 4.08921e+18). using vertex 0
+37592ns 0.779532 
+30668ns 0.481695 
+28207ns 0.00394751 
+failed to find vertex within 0.0703738 for point (4.39537e+17, 3.4793e+18, 3.67264e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (8.08737e+18, -3.14982e+19, 1.74237e+19). using vertex 0
+42436ns 0.0182684 
+18788ns 0.0140447 
+27604ns 0.409019 
+failed to find vertex within 0.0703738 for point (4.66122e+18, 2.93259e+17, 3.65967e+19). using vertex 0
+31141ns 1.47226 
+21573ns 0.122068 
+failed to find vertex within 0.0703738 for point (1.73639e+18, 6.76278e+18, 3.62268e+19). using vertex 0
+30140ns 0.843074 
+18583ns 0.0660837 
+failed to find vertex within 0.0703738 for point (1.90537e+19, -3.00239e+19, 9.83115e+18). using vertex 0
+32017ns 0.00211894 
+22578ns 0.0781398 
+failed to find vertex within 0.0703738 for point (3.77846e+18, 2.74521e+18, 3.65967e+19). using vertex 0
+33273ns 0.505687 
+failed to find vertex within 0.0703738 for point (-3.27835e+29, -1.71857e+30, 1.83488e+30). using vertex 0
+29085ns 1.45817 
+27857ns 0.369466 
+17965ns 0.880586 
+failed to find vertex within 0.0703738 for point (-9.23461e+33, 5.07677e+33, -1.65819e+35). using vertex 0
+40925ns 0.460289 
+failed to find vertex within 0.0703738 for point (3.27571e+21, -6.96124e+21, -5.47848e+21). using vertex 0
+30879ns 0.286197 
+failed to find vertex within 0.0703738 for point (1.43213e+19, 1.52506e+19, 3.03883e+19). using vertex 0
+failed to find vertex within 0.0703738 for point (-1.37514e+09, 1.66226e+09, -8.31462e+09). using vertex 0
+41155ns 0.639364 
+failed to find vertex within 0.0703738 for point (-2.26642e+18, -5.81917e+17, -3.68192e+19). using vertex 0
+30214ns 0.00303698 
+failed to find vertex within 0.0703738 for point (1.75956e+09, 6.96658e+08, -8.37888e+09). using vertex 0
+37722ns 1.83128 
+20916ns 0.24568 
+20661ns 0.00466693 
+19475ns 0.0578684 
+21926ns 0.0355094 
+failed to find vertex within 0.0703738 for point (-7.38116e+27, 5.84279e+28, 1.47106e+29). using vertex 0
+29718ns 1.50621 
+20483ns 0.0332708 
+failed to find vertex within 0.0703738 for point (7.11525e+18, -7.57697e+18, -3.5399e+19). using vertex 0
+31160ns 0.0340499 
+24602ns 0.584909 
+failed to find vertex within 0.0703738 for point (2.10742e+19, -2.90061e+19, -8.69797e+18). using vertex 0
+32335ns 0.0596729 
+21579ns 0.223182 
+17936ns 0.0138091 
+failed to find vertex within 0.0703738 for point (4.38459e+17, 2.29848e+18, -3.68192e+19). using vertex 0
+33388ns 0.234508 
+failed to find vertex within 0.0703738 for point (2.97285e+18, -6.31763e+18, 3.62268e+19). using vertex 0
+30430ns 1.15067 
+failed to find vertex within 0.0703738 for point (7.23318e+28, 4.59032e+28, 1.33302e+29). using vertex 0
+32561ns 0.00686915 
+failed to find vertex within 0.0703738 for point (4978.57, 2.71017e+19, -2.50326e+19). using vertex 0
+30968ns 0.0251317 
+failed to find vertex within 0.0703738 for point (-2.52587e+19, 3.19091e+18, 2.67011e+19). using vertex 0
+37833ns 1.78905 
+25412ns 0.346682 
+failed to find vertex within 0.0703738 for point (1.85591e+19, -1.74282e+19, -2.67011e+19). using vertex 0
+29962ns 0.0069545 
+failed to find vertex within 0.0703738 for point (-1.17618e+19, 2.9707e+19, 1.84467e+19). using vertex 0
+30028ns 0.607868 
+failed to find vertex within 0.0703738 for point (1.05434e+19, 1.45117e+19, 3.22394e+19). using vertex 0
+33603ns 0.125679 
+20465ns 0.0309848 
+19804ns 2.16588 
+20484ns 0.0178531 
+failed to find vertex within 0.0703738 for point (4.63361e+18, 5.85361e+17, 3.65967e+19). using vertex 0
+33715ns 0.643341 
+failed to find vertex within 0.0703738 for point (-1.27898e+12, -6.01841e+11, -1.68455e+12). using vertex 0
+failed to find vertex within 0.0703738 for point (6.70522e+28, 7.14034e+28, 1.24555e+29). using vertex 0
+38649ns 0.200675 
+failed to find vertex within 0.0703738 for point (-5.75278e+13, -1.86919e+13, 1.27076e+14). using vertex 0
+30520ns 0.0230854 
+23186ns 0.909402 
+20799ns 0.156896 
+18751ns 0.000702373 
