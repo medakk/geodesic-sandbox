@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 #include <chrono>
+#include <limits>
+#include <vector>
+#include <robin_hood.h>
 
 #include <vtkPLYReader.h>
 #include <vtkPLYWriter.h>
@@ -152,25 +155,38 @@ public:
 
 class IGLCachedHeat: public GeodesicMethod {
   IGLMesh iglMesh;
-  Eigen::MatrixXd D;
+  std::vector<robin_hood::unordered_map<int, double>> D;
 
 public:
-  IGLCachedHeat(const std::string& filepath)
+  IGLCachedHeat(const std::string& filepath, double stopDistance)
   {
     igl::readPLY(filepath, iglMesh.V, iglMesh.F);
     igl::HeatGeodesicsData<double> heatData;
-    igl::heat_geodesics_precompute(iglMesh.V,iglMesh.F,heatData); //TODO Checkout heat paramater
+    igl::heat_geodesics_precompute(iglMesh.V,iglMesh.F,heatData); //TODO Checkout heat parameter
 
     Eigen::VectorXd d;
     Eigen::VectorXi gamma(1);
-    D.resize(numVerts(), numVerts());
-    for(int i=0; i<numVerts(); i++) {
+    const auto N = numVerts();
+    D.resize(N);
+    for(int i=0; i<N; i++) {
       gamma(0) = i;
       igl::heat_geodesics_solve(heatData, gamma, d);
-      D.row(i) = d;
+      for(int j=0; j<N; j++) {
+        if(d(j) < stopDistance) {
+          D[i][j] = d(j);
+        }
+      }
     }
 
     std::cerr << "IGLCachedHeat: loaded mesh with " << numVerts() << " vertices" << std::endl;
+
+    /*
+    std::ofstream out_file;
+    out_file.open("distance_matrix/femur_D.txt");
+    out_file.precision(std::numeric_limits<double>::max_digits10);
+    out_file << D;
+    out_file.close();
+    */
   }
 
   virtual size_t numVerts() const override {
@@ -187,7 +203,11 @@ public:
   }
 
   virtual double distance(int i, int j) override {
-    return D(i, j);
+    const auto res = D[i].find(j);
+    if(res == D[i].end()) {
+      return 1e7;
+    }
+    return res->second;
   }
 };
 
@@ -298,7 +318,7 @@ int main(int argc, char *argv[]) {
   } else if(whichFunc == "igl_heat") {
     geodesicFunc = new IGLHeat(plyFilePath);
   } else if(whichFunc == "igl_cached_heat") {
-    geodesicFunc = new IGLCachedHeat(plyFilePath);
+    geodesicFunc = new IGLCachedHeat(plyFilePath, 1.0);
   } else {
     std::cerr << "invalid arg" << std::endl;
     return 1;
