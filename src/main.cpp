@@ -181,20 +181,32 @@ public:
     igl::HeatGeodesicsData<double> heatData;
     igl::heat_geodesics_precompute(iglMesh.V,iglMesh.F,heatData); //TODO Checkout heat parameter
 
-    Eigen::MatrixXd D;
+    // Eigen::MatrixXd D;
     Eigen::VectorXd d;
     Eigen::VectorXi gamma(1);
     const auto N = numVerts();
-    D.resize(N, N);
+    // D.resize(N, N);
+
+    std::vector<Eigen::Triplet<double>> triplets;
+
     for(int i=0; i<N; i++) {
       gamma(0) = i;
       igl::heat_geodesics_solve(heatData, gamma, d);
-      D.row(i) = d;
+      for(int j=0; j<N; j++) {
+        if(d(j) < stopDistance) {
+          triplets.push_back(Eigen::Triplet<double>(i, j, d(j)));
+        }
+      }
+      // D.row(i) = d;
     }
 
-    S = (D.array() > stopDistance).select(0.0, D).sparseView();
+    // S = (D.array() > stopDistance).select(0.0, D).sparseView();
+    S.resize(N, N);
+    S.setFromTriplets(triplets.begin(), triplets.end());
 
     std::cerr << "IGLCachedHeat: loaded mesh with " << numVerts() << " vertices" << std::endl;
+    std::cerr << "S: " << S.nonZeros() <<  " / " << (10982*10982) << std::endl;
+    throw std::runtime_error("enough");
 
     /*
     std::ofstream out_file;
@@ -330,7 +342,7 @@ int main(int argc, char *argv[]) {
   } else if(whichFunc == "igl_heat") {
     geodesicFunc = new IGLHeat(plyFilePath);
   } else if(whichFunc == "igl_cached_heat") {
-    geodesicFunc = new IGLCachedHeat(plyFilePath, 25.0);
+    geodesicFunc = new IGLCachedHeat(plyFilePath, 45.0);
   } else {
     std::cerr << "invalid arg" << std::endl;
     return 1;
@@ -340,11 +352,15 @@ int main(int argc, char *argv[]) {
   std::uniform_int_distribution<int> points_dist(0, geodesicFunc->numVerts());
   std::default_random_engine re;
 
+  std::ifstream query_file("/scratch/karthik/projects/ShapeWorks/Examples/Python/Output/femur_mesh/shape_models/dq_onlyfinal.txt");
+
   // Benchmark loop
   // gonna be biased, these rands
   for(int i=0; i<1000; i++) {
-    const int idx0 = points_dist(re);
-    const int idx1 = points_dist(re);
+    // const int idx0 = points_dist(re);
+    // const int idx1 = points_dist(re);
+    int idx0, idx1, discard;
+    query_file >> idx0 >> idx1 >> discard;
 
     const Vec3d p0 = geodesicFunc->point(idx0);
     const Vec3d p1 = geodesicFunc->point(idx1);
@@ -364,7 +380,7 @@ int main(int argc, char *argv[]) {
     const auto endTime = high_resolution_clock::now();
 
     // Print time taken
-    std::cout << duration_cast<nanoseconds>(endTime - startTime).count() << " ";
+    std::cout << duration_cast<nanoseconds>(endTime - startTime).count() << " " << soln << " ";
 
     // Print error
     const auto diff = std::abs(soln - analytic_soln);
