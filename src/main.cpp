@@ -128,6 +128,23 @@ public:
     igl::heat_geodesics_precompute(iglMesh.V,iglMesh.F,heatData);
 
     std::cerr << "IGLHeat: loaded mesh with " << numVerts() << " vertices" << std::endl;
+
+    /*
+    Eigen::MatrixXd D(numVerts(), numVerts());
+    Eigen::VectorXi gamma;
+    Eigen::VectorXd d;
+    gamma.resize(1);
+    for(int i=0; i<numVerts(); i++) {
+      gamma(0) = i;
+      igl::heat_geodesics_solve(heatData,gamma,d);
+      D.row(i) = d;
+    }
+
+    std::ofstream f("distance_matrix/femur_10982.bin", std::ios::out | std::ios::binary);
+    f.write((const char*) D.data(), D.size() * sizeof(Eigen::MatrixXd::Scalar));
+    f.close();
+    std::cout << "wrote distance transforms" << std::endl;
+     */
   }
 
   virtual size_t numVerts() const override {
@@ -155,7 +172,7 @@ public:
 
 class IGLCachedHeat: public GeodesicMethod {
   IGLMesh iglMesh;
-  std::vector<robin_hood::unordered_map<int, double>> D;
+  Eigen::SparseMatrix<double> S;
 
 public:
   IGLCachedHeat(const std::string& filepath, double stopDistance)
@@ -164,19 +181,18 @@ public:
     igl::HeatGeodesicsData<double> heatData;
     igl::heat_geodesics_precompute(iglMesh.V,iglMesh.F,heatData); //TODO Checkout heat parameter
 
+    Eigen::MatrixXd D;
     Eigen::VectorXd d;
     Eigen::VectorXi gamma(1);
     const auto N = numVerts();
-    D.resize(N);
+    D.resize(N, N);
     for(int i=0; i<N; i++) {
       gamma(0) = i;
       igl::heat_geodesics_solve(heatData, gamma, d);
-      for(int j=0; j<N; j++) {
-        if(d(j) < stopDistance) {
-          D[i][j] = d(j);
-        }
-      }
+      D.row(i) = d;
     }
+
+    S = (D.array() > stopDistance).select(0.0, D).sparseView();
 
     std::cerr << "IGLCachedHeat: loaded mesh with " << numVerts() << " vertices" << std::endl;
 
@@ -203,11 +219,7 @@ public:
   }
 
   virtual double distance(int i, int j) override {
-    const auto res = D[i].find(j);
-    if(res == D[i].end()) {
-      return 1e7;
-    }
-    return res->second;
+    return S.coeff(i, j);
   }
 };
 
@@ -318,7 +330,7 @@ int main(int argc, char *argv[]) {
   } else if(whichFunc == "igl_heat") {
     geodesicFunc = new IGLHeat(plyFilePath);
   } else if(whichFunc == "igl_cached_heat") {
-    geodesicFunc = new IGLCachedHeat(plyFilePath, 1.0);
+    geodesicFunc = new IGLCachedHeat(plyFilePath, 25.0);
   } else {
     std::cerr << "invalid arg" << std::endl;
     return 1;
