@@ -19,9 +19,15 @@ include(${VTK_USE_FILE})
 ### Eigen
 find_package (Eigen3 3.3 REQUIRED NO_MODULE)
 
+## openmp
+find_package(OpenMP REQUIRED)
+
+
 file(GLOB CPP_SRC
         "src/*.cpp"
         )
 add_executable(geotest ${CPP_SRC})
 target_include_directories(geotest PUBLIC src/)
-target_link_libraries(geotest ${VTK_LIBRARIES} igl::core)
+
+
+target_link_libraries(geotest PUBLIC OpenMP::OpenMP_CXX ${VTK_LIBRARIES} igl::core)

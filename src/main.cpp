@@ -181,28 +181,24 @@ public:
     igl::HeatGeodesicsData<double> heatData;
     igl::heat_geodesics_precompute(iglMesh.V,iglMesh.F,heatData); //TODO Checkout heat parameter
 
-    // Eigen::MatrixXd D;
-    Eigen::VectorXd d;
-    Eigen::VectorXi gamma(1);
+    Eigen::MatrixXd D;
     const auto N = numVerts();
-    // D.resize(N, N);
+    D.resize(N, N);
 
     std::vector<Eigen::Triplet<double>> triplets;
 
+#pragma omp parallel for
     for(int i=0; i<N; i++) {
+      Eigen::VectorXd d;
+      Eigen::VectorXi gamma(1);
       gamma(0) = i;
       igl::heat_geodesics_solve(heatData, gamma, d);
-      for(int j=0; j<N; j++) {
-        if(d(j) < stopDistance) {
-          triplets.push_back(Eigen::Triplet<double>(i, j, d(j)));
-        }
-      }
-      // D.row(i) = d;
+      D.col(i) = d;
     }
 
-    // S = (D.array() > stopDistance).select(0.0, D).sparseView();
-    S.resize(N, N);
-    S.setFromTriplets(triplets.begin(), triplets.end());
+    S = (D.array() > stopDistance).select(0.0, D).sparseView();
+    // S.resize(N, N);
+    // S.setFromTriplets(triplets.begin(), triplets.end());
 
     std::cerr << "IGLCachedHeat: loaded mesh with " << numVerts() << " vertices" << std::endl;
     std::cerr << "S: " << S.nonZeros() <<  " / " << (10982*10982) << std::endl;
@@ -326,7 +322,35 @@ IGLMesh into_igl_mesh(vtkPolyData* mesh) {
   return igl_mesh;
 }
 
-int main(int argc, char *argv[]) {
+void eigen_decomposition() {
+  std::cout << "DOING EIGEN COMPO\n";
+  const std::string path = "/scratch/karthik/projects/geodesic-sandbox/python/distance_matrix/femur_10982.bin";
+  std::ifstream in(path, std::ios::in | std::ios::binary);
+  Eigen::MatrixXd D(10982, 10982);
+  in.read(reinterpret_cast<char *>(D.data()), 10982 * 10982 * sizeof(Eigen::MatrixXd::Scalar));
+  in.close();
+
+
+  const double stopDistance = 25.0;
+  Eigen::SparseMatrix<double> S = (D.array() > stopDistance).select(0.0, D).sparseView();
+
+
+  std::cout << "eigen time\n";
+  Eigen::SelfAdjointEigenSolver<Eigen::SparseMatrix<double>> solver(S);
+  if(solver.info() != Eigen::Success) {
+    throw std::runtime_error("eigen solver did not succeed");
+  }
+
+  std::cout << solver.eigenvalues() << std::endl;
+
+
+  throw std::runtime_error("thats all folks");
+}
+
+
+int not_main(int argc, char *argv[]) {
+  eigen_decomposition();
+
   if(argc != 3) {
     std::cerr << "missing arg(s)" << std::endl;
     return 1;
@@ -342,7 +366,7 @@ int main(int argc, char *argv[]) {
   } else if(whichFunc == "igl_heat") {
     geodesicFunc = new IGLHeat(plyFilePath);
   } else if(whichFunc == "igl_cached_heat") {
-    geodesicFunc = new IGLCachedHeat(plyFilePath, 45.0);
+    geodesicFunc = new IGLCachedHeat(plyFilePath, 20.0);
   } else {
     std::cerr << "invalid arg" << std::endl;
     return 1;
