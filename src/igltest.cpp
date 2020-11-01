@@ -23,7 +23,7 @@ int main() {
   igl::per_vertex_normals(V, F, N);
 
   // Lets keep only the X coordinate of the normal
-  const Eigen::VectorXd U = N.col(1);
+  const Eigen::VectorXd U = N.col(0);
 
   // Find gradient operator
   Eigen::SparseMatrix<double> G;
@@ -37,17 +37,24 @@ int main() {
   // Compute gradient magnitude
   const Eigen::VectorXd GU_mag = GU.rowwise().norm();
 
+
+  // Find gradient of U per vertex
+  Eigen::MatrixXd GU_pervertex;
+  igl::per_vertex_normals(V, F, GU, GU_pervertex);
+  std::cout << "GU_pervertex: " << GU_pervertex.rows() << "x" << GU_pervertex.cols() << "\n";
+  const Eigen::VectorXd GU_pervertex_mag = GU_pervertex.rowwise().norm();
+
   igl::opengl::glfw::Viewer viewer;
   viewer.data().set_mesh(V, F);
   viewer.data().set_data(U);
 
   // Average edge length divided by average gradient (for scaling)
-  const double max_size = igl::avg_edge_length(V,F) / GU_mag.mean();
+  const double max_size = igl::avg_edge_length(V,F) / GU_pervertex_mag.mean();
   // Draw a black segment in direction of gradient at face barycenters
-  Eigen::MatrixXd BC;
-  igl::barycenter(V,F,BC);
+  // Eigen::MatrixXd BC;
+  // igl::barycenter(V,F,BC);
   const Eigen::RowVector3d black(0,0,0);
-  viewer.data().add_edges(BC,BC+max_size*GU, black);
+  viewer.data().add_edges(V,V+max_size*GU_pervertex, black);
 
   viewer.data().show_lines = false;
   viewer.data().line_width = 2.0;
