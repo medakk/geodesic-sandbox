@@ -4,6 +4,9 @@
 #include <igl/grad.h>
 #include <igl/per_face_normals.h>
 #include <igl/per_vertex_normals.h>
+#include <igl/opengl/glfw/Viewer.h>
+#include <igl/avg_edge_length.h>
+#include <igl/barycenter.h>
 
 int main() {
   const auto mesh_filepath = "/scratch/karthik/projects/ShapeWorks/Examples/Python/TestFemurMesh/femur/meshes/m03_L_femur.ply";
@@ -11,33 +14,43 @@ int main() {
   Eigen::MatrixXi F;
   igl::readPLY(mesh_filepath, V, F);
 
+  std::cout << "Mesh:\n";
   std::cout << "V: " << V.rows() << "x" << V.cols() << "\n";
   std::cout << "F: " << F.rows() << "x" << F.cols() << "\n";
 
-  Eigen::MatrixXd N_faces;
-  igl::per_face_normals(V, F, N_faces);
+  // compute per-vertex normals
+  Eigen::MatrixXd N;
+  igl::per_vertex_normals(V, F, N);
 
+  // Lets keep only the X coordinate of the normal
+  const Eigen::VectorXd U = N.col(1);
+
+  // Find gradient operator
   Eigen::SparseMatrix<double> G;
-  igl::grad(V, F, G, false);
+  igl::grad(V, F, G);
   std::cout << "G: " << G.rows() << "x" << G.cols() << "\n";
 
-  /*
-  const Eigen::MatrixXd x = G * V;
-  std::cout<< "x: " << x.rows() << "x" <<x.cols() << "\n";
+  // find gradient of U
+  const Eigen::MatrixXd GU = Eigen::Map<const Eigen::MatrixXd>((G*U).eval().data(),F.rows(),3);
+  std::cout << "GU: " << GU.rows() << "x" << GU.cols() << "\n";
 
-  const auto real_n0 = N_faces.row(1);
-  std::cout << "Real n0: " << real_n0(0) << " " << real_n0(1) << " " << real_n0(2) << "\n";
-  const auto x0 = x.row(0) + x.row(1) + x.row(2);
-  std::cout << "x0" << x0(0) << " " << x0(1) << " " << x0(2) << "\n";
-  */
+  // Compute gradient magnitude
+  const Eigen::VectorXd GU_mag = GU.rowwise().norm();
 
-  Eigen::MatrixXd N_verts;
-  igl::per_vertex_normals(V, F, N_verts);
-  const auto GN = G * N_verts;
-  std::cout << "GN: " << GN.rows() << "x" << GN.cols() << std::endl;
+  igl::opengl::glfw::Viewer viewer;
+  viewer.data().set_mesh(V, F);
+  viewer.data().set_data(U);
 
-  Eigen::SparseMatrix<double> H;
-  igl::hessian(V, F, H);
+  // Average edge length divided by average gradient (for scaling)
+  const double max_size = igl::avg_edge_length(V,F) / GU_mag.mean();
+  // Draw a black segment in direction of gradient at face barycenters
+  Eigen::MatrixXd BC;
+  igl::barycenter(V,F,BC);
+  const Eigen::RowVector3d black(0,0,0);
+  viewer.data().add_edges(BC,BC+max_size*GU, black);
 
-  std::cout << "H: " << H.rows() << "x" << H.cols() << "\n";
+  viewer.data().show_lines = false;
+  viewer.data().line_width = 2.0;
+
+  viewer.launch();
 }
