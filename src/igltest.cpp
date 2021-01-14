@@ -35,6 +35,7 @@ void into_per_vertex(const Eigen::MatrixXd& V, const Eigen::MatrixXi& F, const E
   N.rowwise().normalize();
 }
 
+// gradient of normals stuff
 int NORMAL_main() {
   const auto mesh_filepath = "/scratch/karthik/projects/ShapeWorks/Examples/Python/TestFemurMesh/femur/meshes/m03_L_femur.ply";
   Eigen::MatrixXd V;
@@ -108,8 +109,10 @@ int NORMAL_main() {
   viewer.launch();
 }
 
-int main() {
-  const auto mesh_filepath = "/scratch/karthik/projects/ShapeWorks/Examples/Python/TestFemurMesh/femur/meshes/m03_L_femur.ply";
+// gradient of geodesic stuff
+int another_NOTmain() {
+  // const auto mesh_filepath = "/scratch/karthik/projects/ShapeWorks/Examples/Python/TestFemurMesh/femur/meshes/m03_L_femur.ply";
+  const auto mesh_filepath = "/scratch/karthik/projects/ShapeWorks/Examples/Python/Output/plane/ply/plane_00.ply";
   Eigen::MatrixXd V;
   Eigen::MatrixXi F;
   igl::readPLY(mesh_filepath, V, F);
