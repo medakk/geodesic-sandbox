@@ -8,6 +8,7 @@
 #include <cstdlib>
 #include <random>
 #include <unordered_map>
+#include <chrono>
 
 
 std::random_device rd;
@@ -242,9 +243,9 @@ double geodesic_distance_barydatar(
   double res = 0.0;
 
   for(int i=0; i<3; i++) {
-    const double g_i0 = geodesic_distance(F(f_a,0), F(f_b,0));
-    const double g_i1 = geodesic_distance(F(f_a,0), F(f_b,1));
-    const double g_i2 = geodesic_distance(F(f_a,0), F(f_b,2));
+    const double g_i0 = geodesic_distance(F(f_a,i), F(f_b,0));
+    const double g_i1 = geodesic_distance(F(f_a,i), F(f_b,1));
+    const double g_i2 = geodesic_distance(F(f_a,i), F(f_b,2));
     const double g_iy = bary_b[0]*g_i0 + bary_b[1]*g_i1 + bary_b[2]*g_i2;
     res += bary_a[i] * g_iy;
   }
@@ -350,10 +351,19 @@ int main() {
     }
 
     Vec3 geo_grad;
-    // const double geo = geodesic_distance_bo9(pt_a, bary_a, f_a, pt_b, bary_b, f_b, &geo_grad);
     // const double geo = geodesic_distance_barykk(pt_a, bary_a, f_a, pt_b, bary_b, f_b);
-    const double geo = geodesic_distance_barydatar(pt_a, bary_a, f_a, pt_b, bary_b, f_b, &geo_grad);
     // const double geo = geodesic_distance_testmeshfimgrad(pt_a, bary_a, f_a, pt_b, bary_b, f_b, &geo_grad);
+    // const double geo = geodesic_distance_bo9(pt_a, bary_a, f_a, pt_b, bary_b, f_b, &geo_grad);
+    const double geo = geodesic_distance_barydatar(pt_a, bary_a, f_a, pt_b, bary_b, f_b, &geo_grad);
+
+    /*
+    using namespace std::chrono;
+    const auto start = high_resolution_clock::now();
+    const auto end = high_resolution_clock::now();
+    const auto elapsed = duration_cast<nanoseconds>(end - start).count();
+    std::cout << "time: " << elapsed <<"\n";
+    continue;
+    */
 
     const double euc = (pt_a - pt_b).norm();
     const Vec3 euc_grad = pt_a - pt_b;
